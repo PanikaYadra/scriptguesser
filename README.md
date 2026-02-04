@@ -1,1 +1,1 @@
-# scriptguesser
+# Script Guesser
