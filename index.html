@@ -100,7 +100,7 @@
 				var countryCode = allScripts[currentScript].countries[currentCountry];
 
 				if (countryCode in scriptsByCountry) {
-					scriptsByCountry[countryCode].append(allScripts[currentScript]);
+					scriptsByCountry[countryCode].push(allScripts[currentScript]);
 				} else {
 					scriptsByCountry[countryCode] = [ allScripts[currentScript] ];
 				}
@@ -109,15 +109,15 @@
 
 		// Prepare config
 		var config = {
-			"enabledScripts": new Set(),
+			"enabledScripts": [],
 		}
 
 		for (i in allScripts) {
-			config.enabledScripts.add(i);
+			config.enabledScripts.push(i);
 
 			var btn = document.createElement("button");
 			btn.className = "list-group-item list-group-item-action";
-			if (config.enabledScripts.has(i)) {
+			if (config.enabledScripts.includes(i)) {
 				btn.classList.add("active");
 			}
 			btn.value = i;
@@ -125,7 +125,7 @@
 			btn.innerHTML = allScripts[i].label;
 			btn.onclick = function() {
 				toggleScriptEnabled(this.value);
-				if (config.enabledScripts.has(this.value)) {
+				if (config.enabledScripts.includes(this.value)) {
 					this.classList.add("active");
 				} else {
 					this.classList.remove("active");
@@ -139,11 +139,19 @@
 
 		var currentRoundScript = "";
 
+		function removeFromArray(value, array) {
+			var index = array.indexOf(value);
+
+			if (index > -1) {
+				array.splice(index, 1);
+			}
+		}
+
 		function toggleScriptEnabled(script) {
-			if (config.enabledScripts.has(script)) {
-				config.enabledScripts.delete(script);
+			if (config.enabledScripts.includes(script)) {
+				config.enabledScripts.remove(script);
 			} else {
-				config.enabledScripts.add(script);
+				config.enabledScripts.push(script);
 			}
 		}
 
@@ -216,6 +224,20 @@
 		$("#config-country-list-search")[0].addEventListener("input", function(e) {
 			e.preventDefault();
 			updateUiConfigCountryList($("#config-country-list-search")[0].value);
+		});
+
+		Object.defineProperty(Array.prototype, "remove", {
+			value: function (value) {
+				const index = this.indexOf(value);
+				if (index === -1) {
+					throw new Error("Value not found in array");
+				}
+				this.splice(index, 1);
+				return this;
+			},
+			writable: true,
+			configurable: true,
+			enumerable: false
 		});
 	</script>
 </body>

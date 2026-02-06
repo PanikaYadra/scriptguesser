@@ -1,22 +1,252 @@
 {
-	"te": {
-		"id": "te",
-		"label": "Telugu",
-		"countries": ["IN"],
-		"regions": [],
-		"learning": {
-			"example_text": "",
-			"tip": ""
-		}
-	},
-	"th": {
-		"id": "th",
-		"label": "Thai",
-		"countries": ["TH"],
-		"regions": [],
-		"learning": {
-			"example_text": "ปีศาจ พวกมันไม่หยุดทำงาน พวกมันเคลื่อนไหวอยู่ตลอดเวลา พวกมันล่อลวง พวกมันบงการ พวกมันเป็นเจ้าของพวกเรา และถึงแม้ว่าคุณจะอยู่กับฉัน ถึงแม้ว่าฉันจะเป็นผู้สร้างคุณขึ้นมา มันก็ไม่มีอะไรเปลี่ยนแปลง เราทุกคนต้องรับมือกับพวกมันเพียงลำพัง สิ่งที่ดีที่สุดที่เราหวังได้ สิ่งเดียวที่เป็นแสงสว่างในเรื่องนี้ คือเมื่อเราฝ่าฟันไปได้ เราจะพบกับใบหน้าที่คุ้นเคยบางส่วนรออยู่ที่อีกฝั่งหนึ่ง",
-			"tip": ""
-		}
-	}
+  "arabic": {
+    "id": "arabic",
+    "code": "ar",
+    "label": "Arabic",
+    "keys": ["arabic", "arab"],
+    "countries": ["SA", "EG", "AE"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "bengali": {
+    "id": "bengali",
+    "code": "bn",
+    "label": "Bengali",
+    "keys": ["bengali", "bangla"],
+    "countries": ["BD", "IN"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "bengali_assamese": {
+    "id": "bengali_assamese",
+    "code": "as",
+    "label": "Bengali-Assamese (Assamese)",
+    "keys": ["assamese", "bengali-assamese", "bengali assamese"],
+    "countries": ["IN"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "cyrillic_kyrgyz": {
+    "id": "cyrillic_kyrgyz",
+    "code": "ky",
+    "label": "Cyrillic (Kyrgyz)",
+    "keys": ["cyrillic", "kyrgyz", "kyrgyz cyrillic"],
+    "countries": ["KG"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "cyrillic_mongolian": {
+    "id": "cyrillic_mongolian",
+    "code": "mn",
+    "label": "Cyrillic (Mongolian)",
+    "keys": ["cyrillic", "mongolian", "mongolian cyrillic"],
+    "countries": ["MN"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "cyrillic_russian": {
+    "id": "cyrillic_russian",
+    "code": "ru",
+    "label": "Cyrillic (Russian)",
+    "keys": ["cyrillic", "russian", "russian cyrillic"],
+    "countries": ["RU"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "cyrillic_ukrainian": {
+    "id": "cyrillic_ukrainian",
+    "code": "uk",
+    "label": "Cyrillic (Ukrainian)",
+    "keys": ["cyrillic", "ukrainian", "ukrainian cyrillic"],
+    "countries": ["UA"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "devanagari_hindi": {
+    "id": "devanagari_hindi",
+    "code": "hi",
+    "label": "Devanagari (Hindi)",
+    "keys": ["devanagari", "hindi"],
+    "countries": ["IN"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "devanagari_marathi": {
+    "id": "devanagari_marathi",
+    "code": "mr",
+    "label": "Devanagari (Marathi)",
+    "keys": ["devanagari", "marathi"],
+    "countries": ["IN"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "greek": {
+    "id": "greek",
+    "code": "el",
+    "label": "Greek",
+    "keys": ["greek", "hellenic"],
+    "countries": ["GR", "CY"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "gujarati": {
+    "id": "gujarati",
+    "code": "gu",
+    "label": "Gujarati",
+    "keys": ["gujarati"],
+    "countries": ["IN"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "gurmukhi_punjabi": {
+    "id": "gurmukhi_punjabi",
+    "code": "pa",
+    "label": "Gurmukhi (Punjabi)",
+    "keys": ["gurmukhi", "punjabi"],
+    "countries": ["IN"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "hangul_korean": {
+    "id": "hangul_korean",
+    "code": "ko",
+    "label": "Hangul (Korean)",
+    "keys": ["hangul", "korean"],
+    "countries": ["KR", "KP"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "han_chinese": {
+    "id": "han_chinese",
+    "code": "zh-CN",
+    "label": "Han (Chinese)",
+    "keys": ["han", "chinese", "hanzi"],
+    "countries": ["CN", "TW"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "hebrew": {
+    "id": "hebrew",
+    "code": "he",
+    "label": "Hebrew",
+    "keys": ["hebrew"],
+    "countries": ["IL"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "japanese": {
+    "id": "japanese",
+    "code": "ja",
+    "label": "Japanese",
+    "keys": ["japanese", "kana", "hiragana", "katakana", "kanji"],
+    "countries": ["JP"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "kannada": {
+    "id": "kannada",
+    "code": "kn",
+    "label": "Kannada",
+    "keys": ["kannada"],
+    "countries": ["IN"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "khmer": {
+    "id": "khmer",
+    "code": "km",
+    "label": "Khmer",
+    "keys": ["khmer"],
+    "countries": ["KH"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "latin_vietnamese": {
+    "id": "latin_vietnamese",
+    "code": "vi",
+    "label": "Latin (Vietnamese)",
+    "keys": ["latin", "vietnamese", "quoc ngu", "quốc ngữ"],
+    "countries": ["VN"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "malayalam": {
+    "id": "malayalam",
+    "code": "ml",
+    "label": "Malayalam",
+    "keys": ["malayalam"],
+    "countries": ["IN"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "meitei_mayek": {
+    "id": "meitei_mayek",
+    "code": "mni-Mtei",
+    "label": "Meitei Mayek (Manipuri)",
+    "keys": ["meitei", "manipuri", "meithei", "meetei", "meitei mayek"],
+    "countries": ["IN"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "odia": {
+    "id": "odia",
+    "code": "or",
+    "label": "Odia",
+    "keys": ["odia", "oriya"],
+    "countries": ["IN"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "tamil": {
+    "id": "tamil",
+    "code": "ta",
+    "label": "Tamil",
+    "keys": ["tamil"],
+    "countries": ["IN", "LK"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "telugu": {
+    "id": "telugu",
+    "code": "te",
+    "label": "Telugu",
+    "keys": ["telugu"],
+    "countries": ["IN"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
+  "thai": {
+    "id": "thai",
+    "code": "th",
+    "label": "Thai",
+    "keys": ["thai"],
+    "countries": ["TH"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  }
 }
