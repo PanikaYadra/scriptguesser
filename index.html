@@ -15,7 +15,7 @@
 	<div class="container-fluid bg-dark min-vh-100 d-flex flex-column text-white">
 		<div class="row">
 			<div class="container-fluid p-5 my-5 bg-light text-black text-center text-break">
-				<h1 id="script-lbl">Test</h1>
+				<h1 id="script-lbl">Placeholder</h1>
 			</div>
 		</div>
 		<div class="row d-flex align-items-center justify-content-center">
@@ -27,16 +27,19 @@
 		</div>
 		<div class="row d-flex align-items-center justify-content-center">
 			<div class="col-md-6">
-				<div class="input-group mb-3 input-group-lg">
+				<div id="guess-bar" class="input-group mb-3 input-group-lg">
 					<input id="guess-text" type="text" class="form-control text-center" placeholder="Your guess">
 					<button id="guess-btn" class="btn btn-primary text-white" onclick="sendUserGuess(guessText.value)">Guess!</button>
+				</div>
+				<div id="control-bar" class="input-group mb-3 input-group-lg" hidden>
+					<button id="next-round-button" class="btn btn-primary text-white" type="submit" onclick="nextRound()">Next Round</button>
 				</div>
 			</div>
 		</div>
 		<div class="row d-flex align-items-center justify-content-center">
 			<div class="col-md-6"></div>
 			<div class="col-md-6 text-end">
-				<button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#config-container">Config</button>
+				<button id="config-button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#config-container">Config</button>
 				<div id="config-container" class="collapse">
 					<div class="container-fluid bg-light text-black">
 						<div class="row">
@@ -60,7 +63,7 @@
 		</div>
 		<div class="row d-flex align-items-center justify-content-center">
 			<div class="col">
-				Test
+				
 			</div>
 		</div>
 	</div>
@@ -171,10 +174,20 @@
 		}
 
 		function initRound(round) {
+			setConfigButtonLocked(true);
+			clearStatus();
+			clearGuessText();
 			setScriptLabel(game.rounds[round].sentence);
+			setControlBarVisibility(false);
+			setGuessBarVisibility(true);
+			guessText.focus();
 		}
 
 		function nextRound() {
+			if (config.enabledScripts.length <= 0) {
+				setStatus("danger", "Error!", "No scripts selected.");
+			}
+
 			newRound = {
 				"script": "",
 				"sentence": "",
@@ -188,6 +201,13 @@
 			game.rounds.push(newRound);
 			game.currentRound++;
 			initRound(game.currentRound);
+		}
+
+		function endRound() {
+			setGuessBarVisibility(false);
+			setControlBarVisibility(true);
+			setConfigButtonLocked(false);
+			$("#next-round-button")[0].focus();
 		}
 
 		function translateSentence(destScript, sentence) {
@@ -213,7 +233,18 @@
 			return data.sentences[0].trans;
 		}
 
+		function setConfigButtonLocked(isLocked = true) {
+			if (isLocked) {
+				$("#config-container")[0].classList.remove("show");
+				$("#config-button")[0].classList.add("disabled");
+			} else {
+				$("#config-button")[0].classList.remove("disabled");
+			}
+		}
+
 		function setStatus(type, title, text) {
+			clearStatus();
+
 			statusAlert.classList.add("alert");
 			statusAlert.classList.add("alert-" + type);
 			statusAlert.innerHTML = `<strong>${title}</strong> ${text}`;
@@ -226,9 +257,30 @@
 			statusAlert.hidden = true;
 		}
 
+		function clearGuessText() {
+			guessText.value = "";
+		}
+
+		function setGuessBarVisibility(isVisible) {
+			$("#guess-bar")[0].hidden = !isVisible;
+		}
+
+		function setControlBarVisibility(isVisible) {
+			$("#control-bar")[0].hidden = !isVisible;
+		}
+
 		function sendUserGuess(userGuess) {
-			var test = translateSentence("te", "test sentence");
-			alert(test);
+			game.rounds[game.currentRound].userInput = userGuess;
+			var correctScript = game.rounds[game.currentRound].script;
+
+			if (allScripts[correctScript].keywords.includes(userGuess.toLowerCase().trim())) {
+				setStatus("success", "Correct!", `The script was <strong>${allScripts[correctScript].label}</strong>.`);
+				game.rounds[game.currentRound].isCorrect = true;
+			} else {
+				setStatus("danger", "False!", `The script was <strong>${allScripts[correctScript].label}</strong>.`);
+			}
+
+			endRound();
 		}
 
 		function updateUiConfigCountryList(searchString) {
@@ -268,6 +320,9 @@
 			configurable: true,
 			enumerable: false
 		});
+
+		// Start round
+		nextRound();
 	</script>
 </body>
 </html>
