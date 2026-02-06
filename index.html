@@ -50,9 +50,6 @@
 									<input id="config-country-list-search" type="text" class="form-control text-center my-1" placeholder="Search...">
 
 									<div id="config-country-list" class="list-group" style="height: 300px; overflow-y: auto;">
-								    	<button type="button" class="list-group-item list-group-item-action" value="item1">
-								    		Item 1
-								    	</button>
 									</div>
 								</div>
 							</div>
@@ -78,6 +75,7 @@
 		const googleTranslateBaseUrl = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&dt=t&dt=bd&dj=1";
 
 		var allScripts = [];
+		var wordlist = [];
 		var countriesIso2 = {};
 		var scriptsByCountry = {};
 
@@ -92,6 +90,10 @@
 
 		$.getJSON("static/countries_iso2.json", function(json) {
 			countriesIso2 = json;
+		});
+
+		$.getJSON("static/wordlist.json", function(json) {
+			wordlist = json;
 		});
 
 		// Populate arrays/objects
@@ -110,6 +112,7 @@
 		// Prepare config
 		var config = {
 			"enabledScripts": [],
+			"sentenceLength": 10
 		}
 
 		for (i in allScripts) {
@@ -135,17 +138,11 @@
 		}
 
 
-		var mistakes = {}
-
-		var currentRoundScript = "";
-
-		function removeFromArray(value, array) {
-			var index = array.indexOf(value);
-
-			if (index > -1) {
-				array.splice(index, 1);
-			}
+		var game = {
+			"rounds": [],
+			"currentRound": -1
 		}
+
 
 		function toggleScriptEnabled(script) {
 			if (config.enabledScripts.includes(script)) {
@@ -155,8 +152,42 @@
 			}
 		}
 
-		function nextRound() {
+		function getRandomEnabledScript() {
+			return config.enabledScripts[Math.floor(Math.random() * config.enabledScripts.length)];
+		}
 
+		function generateRandomPseudoSentence(amount) {
+			var result = "";
+
+			for (var i = 0; i <= amount - 1; i++) {
+				result += wordlist[Math.floor(Math.random() * wordlist.length)] + " ";
+			}
+
+			return result;
+		}
+
+		function setScriptLabel(text, obfuscateText = false, obfuscationOpacity = 100) {
+			scriptLabel.textContent = text;
+		}
+
+		function initRound(round) {
+			setScriptLabel(game.rounds[round].sentence);
+		}
+
+		function nextRound() {
+			newRound = {
+				"script": "",
+				"sentence": "",
+				"isCorrect": false,
+				"userInput": ""
+			}
+
+			newRound.script = getRandomEnabledScript();
+			newRound.sentence = translateSentence(allScripts[newRound.script].code, generateRandomPseudoSentence(config.sentenceLength));
+
+			game.rounds.push(newRound);
+			game.currentRound++;
+			initRound(game.currentRound);
 		}
 
 		function translateSentence(destScript, sentence) {
@@ -196,8 +227,6 @@
 		}
 
 		function sendUserGuess(userGuess) {
-			//alert(userGuess);
-			setStatus("success", "Correct!", "You were right.");
 			var test = translateSentence("te", "test sentence");
 			alert(test);
 		}
