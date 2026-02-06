@@ -5,16 +5,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+	<link rel="stylesheet" href="static/styles.css">
 
 	<title>Script Guesser</title>
 </head>
 <body>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
-	
+	<script src="https://cdn.jsdelivr.net/npm/fitty@2.4.2/dist/fitty.min.js"></script>
+
 	<div class="container-fluid bg-dark min-vh-100 d-flex flex-column text-white">
 		<div class="row">
-			<div class="container-fluid p-5 my-5 bg-light text-black text-center text-break">
+			<div class="container-fluid p-5 my-4 bg-light text-black text-center text-break" style="height: 180px; display: flex; overflow: hidden;">
 				<h1 id="script-lbl">Placeholder</h1>
 			</div>
 		</div>
@@ -31,28 +33,46 @@
 					<input id="guess-text" type="text" class="form-control text-center" placeholder="Your guess">
 					<button id="guess-btn" class="btn btn-primary text-white" onclick="sendUserGuess(guessText.value)">Guess!</button>
 				</div>
-				<div id="control-bar" class="input-group mb-3 input-group-lg" hidden>
+				<div id="control-bar" class="input-group mb-3 input-group-lg align-items-center justify-content-center" hidden>
 					<button id="next-round-button" class="btn btn-primary text-white" type="submit" onclick="nextRound()">Next Round</button>
 				</div>
 			</div>
 		</div>
 		<div class="row d-flex align-items-center justify-content-center">
-			<div class="col-md-6"></div>
-			<div class="col-md-6 text-end">
+			<div class="col-md-5"></div>
+			<div class="col-md-7 text-end">
 				<button id="config-button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#config-container">Config</button>
 				<div id="config-container" class="collapse">
 					<div class="container-fluid bg-light text-black">
 						<div class="row">
 							<div class="col">
-								<div class="border rounded p-2" style="height: 360px; overflow-y: auto;">
-									123
+								<div class="border rounded p-2" style="height: 330px; overflow-y: auto;">
+									<div class="container-fluid" style="height: 270px">
+										
+									</div>
+									<div class="border rounded p-2" style="height: 50px;">
+										<div class="row">
+											<div class="col-md-6 text-start">
+												<select value="TITLE" id="config-country-list" class="form-select" style="overflow-y: scroll; max-height: 300px;" data-live-search="true" data-live-search-style="startsWith" onchange="enableScriptsByCountry(this.value); this.value = 'TITLE'">
+													<option value="TITLE" disabled>Add by country</option>
+												</select>
+											</div>
+											<div class="col-md-6">
+												<div class="input-group mb-2 border">
+													<button class="btn btn-primary text-white" onclick="enableAllScripts()">All</button>
+													<button class="btn btn-primary text-white" onclick="disableAllScript()">None</button>
+													<button class="btn btn-primary text-white" onclick="invertEnabledScripts()">Invert</button>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="col">
-								<div class="border rounded p-2" style="height: 360px;">
-									<input id="config-country-list-search" type="text" class="form-control text-center my-1" placeholder="Search...">
+								<div class="border rounded p-2" style="height: 330px;">
+									<input id="config-script-list-search" type="text" class="form-control text-center my-1" placeholder="Search...">
 
-									<div id="config-country-list" class="list-group" style="height: 300px; overflow-y: auto;">
+									<div id="config-script-list" class="list-group" style="height: 270px; overflow-y: auto;">
 									</div>
 								</div>
 							</div>
@@ -73,7 +93,7 @@
 		const statusAlert = $("#status-alert")[0];
 		const guessText = $("#guess-text")[0];
 		const scriptLabel = $("#script-lbl")[0];
-		const uiConfigCountryList = $("#config-country-list")[0];
+		const uiConfigCountryList = $("#config-script-list")[0];
 
 		const googleTranslateBaseUrl = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&dt=t&dt=bd&dj=1";
 
@@ -105,9 +125,9 @@
 				var countryCode = allScripts[currentScript].countries[currentCountry];
 
 				if (countryCode in scriptsByCountry) {
-					scriptsByCountry[countryCode].push(allScripts[currentScript]);
+					scriptsByCountry[countryCode].push(allScripts[currentScript]["id"]);
 				} else {
-					scriptsByCountry[countryCode] = [ allScripts[currentScript] ];
+					scriptsByCountry[countryCode] = [ allScripts[currentScript]["id"] ];
 				}
 			}
 		}
@@ -118,7 +138,7 @@
 			"sentenceLength": 10
 		}
 
-		for (i in allScripts) {
+		for (var i in allScripts) {
 			config.enabledScripts.push(i);
 
 			var btn = document.createElement("button");
@@ -131,13 +151,16 @@
 			btn.innerHTML = allScripts[i].label;
 			btn.onclick = function() {
 				toggleScriptEnabled(this.value);
-				if (config.enabledScripts.includes(this.value)) {
-					this.classList.add("active");
-				} else {
-					this.classList.remove("active");
-				}
 			}
 			uiConfigCountryList.appendChild(btn);
+		}
+
+		for (var i in countriesIso2) {
+			var option = document.createElement("option");
+			option.value = i;
+			option.innerHTML = countriesIso2[i];
+
+			$("#config-country-list")[0].appendChild(option);
 		}
 
 
@@ -146,12 +169,62 @@
 			"currentRound": -1
 		}
 
+		function fitText(element, maxFont = 80, minFont = 10) {
+		    var fontSize = maxFont;
+		    element.style.fontSize = fontSize + "px";
+		
+			// Dirty hack
+		    while (element.scrollHeight > 100 && fontSize > minFont) {
+		        fontSize--;
+		        element.style.fontSize = fontSize + "px";
+		    }
+		}
+
+		function enableAllScripts() {
+			for (var i in allScripts) {
+				enableScript(i);
+			}
+		}
+
+		function disableAllScript() {
+			for (var i in allScripts) {
+				disableScript(i);
+			}
+		}
+
+		function invertEnabledScripts() {
+			for (var i in allScripts) {
+				toggleScriptEnabled(i);
+			}
+		}
+
+		function enableScriptsByCountry(country) {
+			for (var i in scriptsByCountry[country]) {
+				enableScript(scriptsByCountry[country][i]);
+			}
+		}
+
+		function enableScript(script) {
+			if (!config.enabledScripts.includes(script)) {
+				config.enabledScripts.push(script);
+			}
+
+			$("#config-script-list :input[value='" + script + "']")[0].classList.add("active");
+		}
+
+		function disableScript(script) {
+			if (config.enabledScripts.includes(script)) {
+				config.enabledScripts.remove(script);
+			}
+
+			$("#config-script-list :input[value='" + script + "']")[0].classList.remove("active");
+		}
 
 		function toggleScriptEnabled(script) {
 			if (config.enabledScripts.includes(script)) {
-				config.enabledScripts.remove(script);
+				disableScript(script);
 			} else {
-				config.enabledScripts.push(script);
+				enableScript(script);
 			}
 		}
 
@@ -171,6 +244,7 @@
 
 		function setScriptLabel(text, obfuscateText = false, obfuscationOpacity = 100) {
 			scriptLabel.textContent = text;
+			fitText(scriptLabel);
 		}
 
 		function initRound(round) {
@@ -302,9 +376,9 @@
 			}
 		});
 
-		$("#config-country-list-search")[0].addEventListener("input", function(e) {
+		$("#config-script-list-search")[0].addEventListener("input", function(e) {
 			e.preventDefault();
-			updateUiConfigCountryList($("#config-country-list-search")[0].value);
+			updateUiConfigCountryList($("#config-script-list-search")[0].value);
 		});
 
 		Object.defineProperty(Array.prototype, "remove", {
