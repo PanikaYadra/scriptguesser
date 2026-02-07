@@ -189,6 +189,16 @@
     "example_text": "",
     "tip": ""
   },
+  "lao": {
+    "id": "lao",
+    "code": "lo",
+    "label": "Lao",
+    "keywords": ["lao", "laotian"],
+    "countries": ["LA"],
+    "regions": [],
+    "example_text": "",
+    "tip": ""
+  },
   "latin_vietnamese": {
     "id": "latin_vietnamese",
     "code": "vi",
