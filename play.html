@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+	<link rel="stylesheet" href="static/styles.css">
+
+	<title>ScriptGuesser</title>
+</head>
+<body>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+
+	<div class="container-fluid bg-dark min-vh-100 d-flex flex-column text-white">
+		<nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
+			<div class="container-fluid">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link active" href="/">Main Menu</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Play</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" hidden href="learn.html">Learn</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" hidden href="about.html">About</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="row">
+			<div class="container-fluid p-5 my-4 bg-light text-black text-center text-break" style="height: 180px; display: flex; overflow: hidden;">
+				<h1 id="script-lbl" class="text-center">Placeholder</h1>
+			</div>
+		</div>
+		<div class="row d-flex align-items-center justify-content-center">
+			<div class="col-md-8 text-center">
+				<div id="status-alert" class="alert" hidden>
+					Placeholder
+				</div>
+			</div>
+		</div>
+		<div class="row d-flex align-items-center justify-content-center">
+			<div class="col-md-6">
+				<div id="guess-bar" class="input-group mb-3 input-group-lg">
+					<input id="guess-text" type="text" class="form-control text-center" placeholder="Your guess">
+					<button id="guess-btn" class="btn btn-primary text-white" onclick="sendUserGuess(guessText.value)">Guess!</button>
+				</div>
+				<div id="control-bar" class="input-group mb-3 input-group-lg align-items-center justify-content-center" hidden>
+					<button id="next-round-button" class="btn btn-primary text-white" type="submit" onclick="nextRound()">Next Round</button>
+				</div>
+			</div>
+		</div>
+		<div class="row d-flex align-items-center justify-content-center">
+			<div class="col-md-5"></div>
+			<div class="col-md-7 text-end">
+				<button id="config-button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#config-container">Config</button>
+				<div id="config-container" class="collapse">
+					<div class="container-fluid bg-light text-black">
+						<div class="row">
+							<div class="col">
+								<div class="border rounded p-2" style="height: 330px; overflow-y: auto;">
+									<div class="container-fluid text-start" style="height: 270px">
+										<label for="config-sentence-length-range" class="form-label">Sentence Length</label>
+										<div class="mb-2 gap-2 align-items-center d-flex">
+											<input id="config-sentence-length-range" type="range" class="form-range flex-grow-1" min="1" max="50" step="1" oninput="configUpdateSentenceLength(this.value)" list="config-sentence-length-range-options">
+											<datalist id="config-sentence-length-range-options">
+												<option value="10"></option>
+											</datalist>
+											<input id="config-sentence-length-input" type="number" class="form-control w-auto" min="1" max="50" step="1" style="max-width: 100px;" oninput="configUpdateSentenceLength(this.value)">
+										</div>
+									</div>
+									<div class="border rounded p-2" style="height: 50px;">
+										<div class="row">
+											<div class="col-md-6 text-start">
+												<select selected="TITLE" id="config-country-list" class="form-select" style="overflow-y: scroll; max-height: 300px;" data-live-search="true" data-live-search-style="startsWith" onchange="enableScriptsByCountry(this.value); this.value = 'TITLE'">
+													<option value="TITLE" disabled>Add by country</option>
+												</select>
+											</div>
+											<div class="col-md-6">
+												<div class="input-group mb-2 border">
+													<button class="btn btn-primary text-white" onclick="enableAllScripts()">All</button>
+													<button class="btn btn-primary text-white" onclick="disableAllScript()">None</button>
+													<button class="btn btn-primary text-white" onclick="invertEnabledScripts()">Invert</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="border rounded p-2" style="height: 330px;">
+									<input id="config-script-list-search" type="text" class="form-control text-center my-1" placeholder="Search...">
+
+									<div id="config-script-list" class="list-group" style="height: 270px; overflow-y: auto;">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row d-flex align-items-center justify-content-center">
+			<div class="col">
+				
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// Consts
+		const statusAlert = $("#status-alert")[0];
+		const guessText = $("#guess-text")[0];
+		const scriptLabel = $("#script-lbl")[0];
+		const uiConfigCountryList = $("#config-script-list")[0];
+
+		const googleTranslateBaseUrl = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&dt=t&dt=bd&dj=1";
+
+		var allScripts = [];
+		var wordlist = [];
+		var countriesIso2 = {};
+		var scriptsByCountry = {};
+
+		// Load JSON files
+		$.ajaxSetup({
+    		async: false
+		});
+
+		$.getJSON("static/scripts.json", function(json) {
+			allScripts = json;
+		});
+
+		$.getJSON("static/countries_iso2.json", function(json) {
+			countriesIso2 = json;
+		});
+
+		$.getJSON("static/wordlist.json", function(json) {
+			wordlist = json;
+		});
+
+		// Populate arrays/objects
+		for (var currentScript in allScripts) {
+			for (var currentCountry in allScripts[currentScript].countries) {
+				var countryCode = allScripts[currentScript].countries[currentCountry];
+
+				if (countryCode in scriptsByCountry) {
+					scriptsByCountry[countryCode].push(allScripts[currentScript]["id"]);
+				} else {
+					scriptsByCountry[countryCode] = [ allScripts[currentScript]["id"] ];
+				}
+			}
+		}
+
+		// Prepare config
+		var config = {
+			"enabledScripts": [],
+			"sentenceLength": 10,
+			"MIN_SENTENCE_LENGTH": 1,
+			"MAX_SENTENCE_LENGTH": 50
+		}
+
+		for (var i in allScripts) {
+			config.enabledScripts.push(i);
+
+			var btn = document.createElement("button");
+			btn.className = "list-group-item list-group-item-action";
+			if (config.enabledScripts.includes(i)) {
+				btn.classList.add("active");
+			}
+			btn.value = i;
+			btn.type = "button";
+			btn.innerHTML = allScripts[i].label;
+			btn.onclick = function() {
+				toggleScriptEnabled(this.value);
+			}
+			uiConfigCountryList.appendChild(btn);
+		}
+
+		for (var i in countriesIso2) {
+			var option = document.createElement("option");
+			option.value = i;
+			option.innerHTML = countriesIso2[i];
+
+			$("#config-country-list")[0].appendChild(option);
+		}
+
+
+		var game = {
+			"rounds": [],
+			"currentRound": -1
+		}
+
+		function fitText(element, maxFont = 80, minFont = 10) {
+		    var fontSize = maxFont;
+		    element.style.fontSize = fontSize + "px";
+		
+			// Dirty hack
+		    while (element.scrollHeight > 100 && fontSize > minFont) {
+		        fontSize--;
+		        element.style.fontSize = fontSize + "px";
+		    }
+		}
+
+		function configUpdateSentenceLength(newLength) {
+			var length = newLength;
+
+			if (length > config.MAX_SENTENCE_LENGTH) {
+				length = config.MAX_SENTENCE_LENGTH;
+			} else if (length < config.MIN_SENTENCE_LENGTH) {
+				length = config.MIN_SENTENCE_LENGTH;
+			}
+
+			config.sentenceLength = length;
+
+			$("#config-sentence-length-range")[0].value = length;
+			$("#config-sentence-length-input")[0].value = length;
+		}
+
+		function enableAllScripts() {
+			for (var i in allScripts) {
+				enableScript(i);
+			}
+		}
+
+		function disableAllScript() {
+			for (var i in allScripts) {
+				disableScript(i);
+			}
+		}
+
+		function invertEnabledScripts() {
+			for (var i in allScripts) {
+				toggleScriptEnabled(i);
+			}
+		}
+
+		function enableScriptsByCountry(country) {
+			for (var i in scriptsByCountry[country]) {
+				enableScript(scriptsByCountry[country][i]);
+			}
+		}
+
+		function enableScript(script) {
+			if (!config.enabledScripts.includes(script)) {
+				config.enabledScripts.push(script);
+			}
+
+			$("#config-script-list :input[value='" + script + "']")[0].classList.add("active");
+		}
+
+		function disableScript(script) {
+			if (config.enabledScripts.includes(script)) {
+				config.enabledScripts.remove(script);
+			}
+
+			$("#config-script-list :input[value='" + script + "']")[0].classList.remove("active");
+		}
+
+		function toggleScriptEnabled(script) {
+			if (config.enabledScripts.includes(script)) {
+				disableScript(script);
+			} else {
+				enableScript(script);
+			}
+		}
+
+		function getRandomEnabledScript() {
+			return config.enabledScripts[Math.floor(Math.random() * config.enabledScripts.length)];
+		}
+
+		function generateRandomPseudoSentence(amount) {
+			var result = "";
+
+			for (var i = 0; i <= amount - 1; i++) {
+				result += wordlist[Math.floor(Math.random() * wordlist.length)] + " ";
+			}
+
+			return result;
+		}
+
+		function setScriptLabel(text, obfuscateText = false, obfuscationOpacity = 100) {
+			scriptLabel.textContent = text;
+			fitText(scriptLabel);
+		}
+
+		function initRound(round) {
+			setConfigButtonLocked(true);
+			clearStatus();
+			clearGuessText();
+			setScriptLabel(game.rounds[round].sentence);
+			setControlBarVisibility(false);
+			setGuessBarVisibility(true);
+			guessText.focus();
+		}
+
+		function nextRound() {
+			if (config.enabledScripts.length <= 0) {
+				setStatus("danger", "Error!", "No scripts selected.");
+			}
+
+			newRound = {
+				"script": "",
+				"sentence": "",
+				"isCorrect": false,
+				"userInput": ""
+			}
+
+			newRound.script = getRandomEnabledScript();
+			newRound.sentence = translateSentence(allScripts[newRound.script].code, generateRandomPseudoSentence(config.sentenceLength));
+
+			game.rounds.push(newRound);
+			game.currentRound++;
+			initRound(game.currentRound);
+		}
+
+		function endRound() {
+			setGuessBarVisibility(false);
+			setControlBarVisibility(true);
+			setConfigButtonLocked(false);
+			$("#next-round-button")[0].focus();
+		}
+
+		function translateSentence(destScript, sentence) {
+			var destLang = destScript;
+			var data = "";
+
+			/*var res = await fetch(googleTranslateBaseUrl + "&tl=" + destLang + "&q=" + encodeURI(sentence));
+			data = await res.json();*/
+
+			var request = new XMLHttpRequest();
+			request.open("GET", googleTranslateBaseUrl + "&tl=" + destLang + "&q=" + encodeURI(sentence), false);
+			request.onload = function() {
+				data = JSON.parse(request.responseText);
+			}
+			request.send(null);
+
+			if (request.status === 200) {
+				res = request;
+			} else {
+				console.log("Failed to fetch translation.");
+			}
+
+			return data.sentences[0].trans;
+		}
+
+		function setConfigButtonLocked(isLocked = true) {
+			if (isLocked) {
+				$("#config-container")[0].classList.remove("show");
+				$("#config-button")[0].classList.add("disabled");
+			} else {
+				$("#config-button")[0].classList.remove("disabled");
+			}
+		}
+
+		function setStatus(type, title, text) {
+			clearStatus();
+
+			statusAlert.classList.add("alert");
+			statusAlert.classList.add("alert-" + type);
+			statusAlert.innerHTML = `<strong>${title}</strong> ${text}`;
+			statusAlert.hidden = false;
+		}
+
+		function clearStatus() {
+			statusAlert.classList = [];
+			statusAlert.innerHTML = "";
+			statusAlert.hidden = true;
+		}
+
+		function clearGuessText() {
+			guessText.value = "";
+		}
+
+		function setGuessBarVisibility(isVisible) {
+			$("#guess-bar")[0].hidden = !isVisible;
+		}
+
+		function setControlBarVisibility(isVisible) {
+			$("#control-bar")[0].hidden = !isVisible;
+		}
+
+		function sendUserGuess(userGuess) {
+			game.rounds[game.currentRound].userInput = userGuess;
+			var correctScript = game.rounds[game.currentRound].script;
+
+			if (allScripts[correctScript].keywords.includes(userGuess.toLowerCase().trim())) {
+				setStatus("success", "Correct!", `The script was <strong>${allScripts[correctScript].label}</strong>.`);
+				game.rounds[game.currentRound].isCorrect = true;
+			} else {
+				setStatus("danger", "False!", `The script was <strong>${allScripts[correctScript].label}</strong>.`);
+			}
+
+			endRound();
+		}
+
+		function updateUiConfigCountryList(searchString) {
+			for (var cur in Array.from(uiConfigCountryList.children)) {
+				if (uiConfigCountryList.children[cur].textContent.toLowerCase().includes(searchString.toLowerCase().trim())) {
+					uiConfigCountryList.children[cur].hidden = false;
+				} else {
+					uiConfigCountryList.children[cur].hidden = true;
+				}
+			}
+		}
+	</script>
+
+	<script>
+		guessText.addEventListener("keypress", function(e) {
+			if (e.key == "Enter") {
+				e.preventDefault();
+				sendUserGuess(guessText.value)
+			}
+		});
+
+		$("#config-script-list-search")[0].addEventListener("input", function(e) {
+			e.preventDefault();
+			updateUiConfigCountryList($("#config-script-list-search")[0].value);
+		});
+
+		Object.defineProperty(Array.prototype, "remove", {
+			value: function (value) {
+				const index = this.indexOf(value);
+				if (index === -1) {
+					throw new Error("Value not found in array");
+				}
+				this.splice(index, 1);
+				return this;
+			},
+			writable: true,
+			configurable: true,
+			enumerable: false
+		});
+
+		// Start round
+		nextRound();
+	</script>
+</body>
+</html>
