@@ -311,7 +311,13 @@
 			}
 
 			newRound.script = getRandomEnabledScript();
-			newRound.sentence = translateSentence(allScripts[newRound.script].code, generateRandomPseudoSentence(config.sentenceLength));
+			var pseudoSentence = generateRandomPseudoSentence(config.sentenceLength);
+			newRound.sentence = translateSentence(allScripts[newRound.script].code, pseudoSentence);
+
+			var splitPseudoSentence = pseudoSentence.split(" ");
+			for (var i in splitPseudoSentence) {
+				newRound.sentence = newRound.sentence.replace(splitPseudoSentence[i], "");
+			}
 
 			game.rounds.push(newRound);
 			game.currentRound++;
