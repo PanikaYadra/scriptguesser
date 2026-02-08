@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="	sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+	<title>ScriptGuesser – About</title>
+</head>
+<body>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+
+	<div class="container-fluid bg-dark min-vh-100 min-vw-100 d-flex flex-column text-white">
+		<nav class="navbar bg-primary navbar-dark fixed-top">
+			<div class="container-fluid flex-nowrap">
+				<ul class="navbar-nav flex-row gap-3">
+					<li class="nav-item">
+						<a class="nav-link active" href="index.html">Main Menu</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="play.html">Play</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" hidden href="learn.html">Learn</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">About</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="row align-items-center justify-content-center text-center">
+			<div class="col">
+				<div class="p-3"></div>
+				<h1 class="p-5">About ScriptGuesser – Q&A</h1>
+
+				<div id="qa-accordion">
+					<div class="card">
+						<div class="card-header">
+							<a class="btn" data-bs-toggle="collapse" href="#qa-card-intro">What's ScriptGuesser?</a>
+						</div>
+						<div id="qa-card-intro" class="collapse show" data-bs-parent="#qa-accordion">
+							<div class="card-body">
+								ScriptGuesser is a guesser game like <a href="https://www.geoguessr.com" target="_blank">GeoGuessr</a>, but instead of guessing Google Maps coverage, you guess writing scripts used around the world.
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							<a class="btn" data-bs-toggle="collapse" href="#qa-card-purpose">What's the purpose of this game?</a>
+						</div>
+						<div id="qa-card-purpose" class="collapse" data-bs-parent="#qa-accordion">
+							<div class="card-body">
+								Originally, this game was meant as a way for GeoGuessr players to learn and practice recognizing different writing systems and where they are are used.
+								<br>
+								<br>
+								However, this game can also be fun for anyone who is curious about writing systems or who wants to impress others with their ability to recognize languages.
+								<br>
+								<br>
+								Regardless of your motivation, please feel welcomed.
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							<a class="btn" data-bs-toggle="collapse" href="#qa-card-scripts">Why are some scripts missing from the config menu?</a>
+						</div>
+						<div id="qa-card-scripts" class="collapse" data-bs-parent="#qa-accordion">
+							<div class="card-body">
+								Since this game was meant for GeoGuessr players in the first place, only the scripts which can be found on GeoGuessr (on Google Maps) are present in the game right now.
+								<br>
+								<br>
+								I am planning to implement a system to select scripts from presets in the future though. Once I've done that, I will add more scripts.
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							<a class="btn" data-bs-toggle="collapse" href="#qa-card-source">Can I see the games source code?</a>
+						</div>
+						<div id="qa-card-source" class="collapse" data-bs-parent="#qa-accordion">
+							<div class="card-body">
+								Of course! The whole code of the game is open-source on <a href="https://github.com/PanikaYadra/scriptguesser" target="_blank">GitHub</a>. Since the project runs 100% on the client side, you can also inspect anything by opening the Developer Tools in your browser, which can in most browsers be done by pressing <kbd>F12</kbd> on your keyboard.
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							<a class="btn" data-bs-toggle="collapse" href="#qa-card-issues">How do I report issues with the game?</a>
+						</div>
+						<div id="qa-card-issues" class="collapse" data-bs-parent="#qa-accordion">
+							<div class="card-body">
+								Please open a new Issue on <a href="https://github.com/PanikaYadra/scriptguesser/issues" target="_blank">GitHub</a> and I will take a look at it as soon as I can.
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							<a class="btn" data-bs-toggle="collapse" href="#qa-card-author">Who even created this game?</a>
+						</div>
+						<div id="qa-card-author" class="collapse" data-bs-parent="#qa-accordion">
+							<div class="card-body">
+								Hi, that's me :)
+								<br>
+								<br>
+								I'm Panika and I like different cultures and the world as a whole. You can check out my <a href="https://github.com/PanikaYadra" target="_blank">GitHub Profile</a> if you want to.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
