@@ -4,7 +4,7 @@
     "code": "ar",
     "label": "Arabic",
     "keywords": ["arabic", "arab"],
-    "countries": ["SA", "EG", "AE"],
+    "countries": ["DZ", "BH", "TD", "KM", "DJ", "EG", "JO", "LB", "LY", "MR", "MA", "OM", "PS", "QA", "SA", "SO", "SD","SY", "TN", "AE", "YE"],
     "regions": [],
     "example_text": "",
     "tip": ""
