@@ -180,13 +180,14 @@
 			uiConfigCountryList.appendChild(btn);
 		}
 
-		for (var i in countriesIso2) {
+		for (var i in scriptsByCountry) {
 			var option = document.createElement("option");
 			option.value = i;
 			option.innerHTML = countriesIso2[i];
 
 			$("#config-country-list")[0].appendChild(option);
 		}
+		$("#config-country-list")[0].value = "TITLE";
 
 
 		var game = {
