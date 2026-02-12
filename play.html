@@ -66,11 +66,11 @@
 									<div class="container-fluid text-start" style="height: 270px">
 										<label for="config-sentence-length-range" class="form-label">Sentence Length</label>
 										<div class="mb-2 gap-2 align-items-center d-flex">
-											<input id="config-sentence-length-range" type="range" class="form-range flex-grow-1" min="1" max="50" step="1" oninput="configUpdateSentenceLength(this.value)" list="config-sentence-length-range-options">
+											<input id="config-sentence-length-range" type="range" class="form-range flex-grow-1" min="1" max="50" step="1" value="10" oninput="configUpdateSentenceLength(this.value)" list="config-sentence-length-range-options">
 											<datalist id="config-sentence-length-range-options">
 												<option value="10"></option>
 											</datalist>
-											<input id="config-sentence-length-input" type="number" class="form-control w-auto" min="1" max="50" step="1" style="max-width: 100px;" oninput="configUpdateSentenceLength(this.value)">
+											<input id="config-sentence-length-input" type="number" class="form-control w-auto" min="1" max="50" step="1" value="10" style="max-width: 100px;" oninput="configUpdateSentenceLength(this.value)">
 										</div>
 									</div>
 									<div class="border rounded p-2" style="height: 50px;">
