@@ -6,9 +6,9 @@
     "keywords": ["arabic", "arab"],
     "countries": ["DZ", "BH", "TD", "KM", "DJ", "EG", "JO", "LB", "LY", "MR", "MA", "OM", "PS", "QA", "SA", "SO", "SD","SY", "TN", "AE", "YE"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "في نهاية المطاف، فإن القول بأنك لا تهتم بالحق في الخصوصية لأنه ليس لديك ما تخفيه لا يختلف عن القول بأنك لا تهتم بحرية التعبير لأنه ليس لديك ما تقوله.",
+    "description": "The Arabic script is the writing system for the Arabic language and is the second most used writing system in the world by countries using it and the third most used by number of users. It is written from right to left and has been used to write Arabic books like the Quran.",
+    "tip": "The Arabic script can be recognized by the very round letters featuring many curves and dots. You might also notice, that the script looks very \"flowing\" and connected."
   },
   "bengali": {
     "id": "bengali",
@@ -17,9 +17,9 @@
     "keywords": ["bengali", "bangla"],
     "countries": ["BD", "IN"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "একজন মানুষকে বন্দুক দিলে সে ব্যাংক ডাকাতি করতে পারবে, কিন্তু একজন মানুষকে ব্যাংক দিলে সে পৃথিবী ডাকাতি করতে পারবে।",
+    "description": "The Bengali script is the writing system of the Bengali language primarily spoken in the Bengal region. The script is used by over 300 million people making it the 6th most commonly used writing system in the world.",
+    "tip": "Bengali looks similar to Devanagari (Hindi) in the way, that it also uses the horizontal line going through most letters, but can be recognized by the small triangular shapes on the bottom of many characters."
   },
   "bengali_assamese": {
     "id": "bengali_assamese",
@@ -28,9 +28,9 @@
     "keywords": ["assamese", "asamiya", "bengali-assamese", "bengali assamese"],
     "countries": ["IN"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "মানুহ এজনক বন্দুক দিয়ক আৰু সি বেংক লুটিব পাৰে, কিন্তু মানুহ এজনক বেংক দিয়ক, আৰু সি পৃথিৱীখন লুটিব পাৰে।",
+    "description": "The Bengali-Assamese script is used for the Bengali and Assamese language spoken in South Asia.",
+    "tip": "The Bengali-Assamese script looks very similar to the Bengali script, however, it can be recognized by the the strikes through some of the triangles (this character: ৰ)."
   },
   "cyrillic_kyrgyz": {
     "id": "cyrillic_kyrgyz",
@@ -39,9 +39,9 @@
     "keywords": ["cyrillic", "kyrgyz", "kirghiz", "kyrgyz cyrillic"],
     "countries": ["KG"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "Акыр-аягы, жашыра турган эч нерсеңиз жок болгондуктан, жеке жашоого болгон укукка маани бербейм деп талашуу, айта турган эч нерсеңиз жок болгондуктан, сөз эркиндигине маани бербейм деп айтуудан эч айырмасы жок.",
+    "description": "While the Perso-Arabic script has been used by the Kyrgyz language historically, today, a modified cyrillic script is used. While mostly identical to Russian cyrillic with the exception of the three letters listed below, if you can read cyrillic, you will notice the words do not sound slavic at all.",
+    "tip": "The Kyrgyz script, being a cyrillic script, looks similar to Russian, however, the letters 'Ң', 'Ө' and 'Ү' are not found in Russian. The letter 'Ң' is good indicator for Kyrgyz since it is mostly found in several Turkic languages, most notably Kyrgyz and Kazakh."
   },
   "cyrillic_mongolian": {
     "id": "cyrillic_mongolian",
@@ -83,9 +83,9 @@
     "keywords": ["devanagari", "hindi"],
     "countries": ["IN"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "किसी व्यक्ति को बंदूक दे दो तो वह बैंक लूट सकता है, लेकिन किसी व्यक्ति को बैंक दे दो तो वह पूरी दुनिया लूट सकता है।",
+    "description": "Hindi and over 120 other languages use the Devanagari script which is, with over 480 million active users, the 4th most commonly used writing system in the world.",
+    "tip": "Devanagari can be recognized by the horizontal line running across the top of most words. Assamese, Bengali, Marathi and Punjabi feature the line as well."
   },
   "devanagari_marathi": {
     "id": "devanagari_marathi",
@@ -94,9 +94,9 @@
     "keywords": ["devanagari", "marathi", "maharashtran"],
     "countries": ["IN"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "जेव्हा तुम्ही त्याच्या अगदी जवळ येतो, त्याच्या गाभ्याशी, प्रत्येक निवडीखाली, एकतर एक किंवा शून्य असते. तुम्ही काहीतरी करा किंवा नाही.",
+    "description": "Marathi is a language spoken by about 83 million people, which makes it one of the most widely spoken native spoken languages in India. Marathi uses the Devanagari script and has some of the oldest literature of all modern Indian languages.",
+    "tip": "Marathi uses the Devanagari script with the addition of the (rather rarely used) character 'ळ', which looks like an infinity sign. Don't confuse it with 'क', which also appears in Hindi."
   },
   "dzongkha": {
     "id": "dzongkha",
@@ -105,9 +105,9 @@
     "keywords": ["dzongkha", "bhutanese"],
     "countries": ["BT"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "ཐད་ཀར་དུ་འབད་བ་ཅིན་ དཀར་ཆག་ཚུ་ཡོདཔ་ཨིན་ དེ་འབདཝ་ད་ དཀར་ཆག་གི་རྩ་བ་ལུ་བལྟ་བ་ཅིན་ གདམ་ཁ་རེ་རེའི་འོག་ལུ་ ༡ དང་ ༠ གཉིས་ཆ་ར་ཡོདཔ་ཨིན། ཁྱོད་ཀྱིས་ལཱ་ག་ཅི་ར་འབད་རུང་ འབད་མ་བཏུབ་ཨིན།",
+    "description": "Dzongkha is a South Tibetic Language primarily spoken in Bhutan, which uses the Tibetic script. Dzongkha has about 171k native speakers and about 640k total speakers. The word 'dzongkha' means 'the language of the fortress'.",
+    "tip": "Dzongkha features very unique looking character with long droops at the right side of the letter, sometimes being straight and sometimes bent."
   },
   "greek": {
     "id": "greek",
@@ -116,9 +116,9 @@
     "keywords": ["greek", "hellenic"],
     "countries": ["GR", "CY"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "Αυτό είναι ένα παιχνίδι μηδενικού αθροίσματος. Υπολογίστε όλα τα αποτελέσματα. Παίζετε ένα παιχνίδι που έχετε ήδη χάσει.",
+    "description": "The Greek script has been used since the late 9th or early 8th century BC and is the ancestor of many commonly used scripts today like Latin or Cyrillic.",
+    "tip": "You may be able to recognize some Greek letters from maths. Some Greek letters look very similar to cyrillic letters, however, the lower case letters in Greek tend to have softer shapes. Also, letters like 'ξ' or 'ψ' are not found in commonly used cyrillic scripts."
   },
   "gujarati": {
     "id": "gujarati",
@@ -127,9 +127,9 @@
     "keywords": ["gujarati"],
     "countries": ["IN"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "આ એક શૂન્ય-સમ રમત છે. બધા પરિણામોની ગણતરી કરો. તમે એક રમત રમી રહ્યા છો જે તમે પહેલાથી જ હારી ગયા છો.",
+    "description": "The Gujarati script is derived of the Devanagari script and one of the official scripts in India.",
+    "tip": "Gujarati looks somewhat similar to Hindi, but lacks the horizontal lime going through most letters in Hindi."
   },
   "gurmukhi_punjabi": {
     "id": "gurmukhi_punjabi",
@@ -138,31 +138,31 @@
     "keywords": ["gurmukhi", "punjabi", "panjabi"],
     "countries": ["IN"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "ਇਹ ਇੱਕ ਜ਼ੀਰੋ-ਸਮ ਗੇਮ ਹੈ। ਸਾਰੇ ਨਤੀਜਿਆਂ ਦੀ ਗਣਨਾ ਕਰੋ। ਤੁਸੀਂ ਇੱਕ ਗੇਮ ਖੇਡ ਰਹੇ ਹੋ ਜੋ ਤੁਸੀਂ ਪਹਿਲਾਂ ਹੀ ਹਾਰ ਚੁੱਕੇ ਹੋ।",
+    "description": "Gurmukhi is a script used by the Punjabi language spoken in Punjab, India. While Punjabi is spoken in some parts of Pakistan as well, in Pakistan, it is written using the Perso-Arabic script.",
+    "tip": "Punjabi has similarities with Hindi (or other Devanagari scripts), but tends to look softer and sometimes breaks the horizontal line above some characters. The letters, 'ਨ', 'ਲ' and 'ਅ' are also unique to Punjabi."
   },
   "hangul_korean": {
     "id": "hangul_korean",
     "code": "ko",
     "label": "Hangul (Korean)",
-    "keywords": ["hangul", "korean"],
+    "keywords": ["hangul", "hangeul", "korean", "hunminjeongeum"],
     "countries": ["KR", "KP"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "악마들. 그들은 멈추지 않고 계속 활동한다. 항상 유혹하고, 조종하고, 우리를 지배한다. 네가 나와 함께 있고, 내가 널 창조했다 해도, 아무 소용이 없다.",
+    "description": "Hangul is the modern script used for the Korean language. Before the creation of Hangul in 1446, Korea used Chinese characters called Hanja.",
+    "tip": "Hangul features very unique characters. There are circles and 90° angles present in many characters. Compared to Kanji/Han, Hangul characters looks more simplistic and the circles make Hangul look different than Kana."
   },
   "han_chinese": {
     "id": "han_chinese",
     "code": "zh-CN",
     "label": "Han (Chinese)",
     "keywords": ["han", "chinese", "hanzi"],
-    "countries": ["CN", "TW"],
+    "countries": ["CN", "TW", "HK", "MO"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "恶魔。它们永不停歇。它们时刻活跃。它们诱惑。它们操纵。它们掌控着我们。即便你与我同在，即便你由我创造，也无济于事。我们都必须独自面对它们。",
+    "description": "Han, the Chinese characters, represent the only one of the four independently developed writing systems that remains in use today. Unlike traditional letters of an alphabet that reflect a specific sound, Chinese characters carry meaning in themselves. As of 2025, over 100k Chinese characters have been identified.",
+    "tip": "Chinese has a very complex writing system and thus many of its characters looks detailed and difficult to write. Japanese uses Chinese characters as well, however, they are almost always found in combination with Kana."
   },
   "hebrew": {
     "id": "hebrew",
@@ -171,9 +171,9 @@
     "keywords": ["hebrew", "ivrit"],
     "countries": ["IL"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "שדים. הם לא מפסיקים לעבוד. הם תמיד פעילים. הם מפתים. הם מתמרנים. הם שולטים בנו. ואפילו שאתה איתי, למרות שאני יצרתי אותך, זה לא משנה. כולנו חייבים להתמודד איתם לבד.",
+    "description": "The Hebrew alphabet is the script used for the Hebrew language. Like Arabic, Hebrew is written from right to left.",
+    "tip": "Hebrew can look similar to Arabic, but looks much more square with sharp angles, as well as short strokes on the top left of many letters. In contrast to Arabic, Hebrew letters also do not look connected at all."
   },
   "inuktitut": {
     "id": "inuktitut",
@@ -182,9 +182,9 @@
     "keywords": ["inuktitut", "inuktut", "canadian syllabics", "canadian-syllabics", "inuit"],
     "countries": ["CA"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "ᑕᐃᒪᓕᑭᐊᖅ ᐊᓯᔾᔩᓂᖅ ᓯᓚᕐᔪᐊᕐᒥ ᑕᒫᓃᑐᐃᓐᓇᕐᓂᐅᑉᐸᑦ, ᓴᖅᑭᔮᕐᓂᒃᑯᑦ... ᓱᓕᓂᒃᑯᑦ ᑲᓐᖑᓱᒃᑲᓗᐊᖅᑎᓪᓗᑕ ᓴᓪᓗᓂᕐᒥᒃ?",
+    "description": "Inuktitut syllabics is a writing system used by the Inuktitut-speaking Inuit in Nunavut, Canada. Inuktitut being a collective term for many Inuit dialects.",
+    "tip": "Inuktitut syllabics are very distinct. You can recognize them by the very clear triangles and bow-like shapes, as well as by the the little 'b'- and 'cb'-looking shapes next to some characters ('ᒃ' and 'ᖅ'). While extremely rare on Google Maps, these syllabics can sometimes be seen in the north of Canada."
   },
   "japanese": {
     "id": "japanese",
@@ -193,9 +193,9 @@
     "keywords": ["japanese", "kana", "hiragana", "katakana", "nihongo"],
     "countries": ["JP"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "エリオット、世界が危険なのは、悪事を働く人々のせいではなく、見て見ぬふりをして何もしない人々のせいなのです。",
+    "description": "Japanese consists of 3 types of characters: Hiragana, Katakana and Kanji. Kanji are Chinese characters, while Kana letters correspond to syllables.",
+    "tip": "Japanese can be recognized by the combination of complex looking characters (Kanji) and simpler looking ones (Kana). If there are only complex characters, it's Chinese. If there are only simple characters, it's probably Korean Hangul."
   },
   "kannada": {
     "id": "kannada",
