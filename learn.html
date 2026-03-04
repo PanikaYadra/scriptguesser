@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="static/css/styles.css">
 
 	<title>ScriptGuesser - Learn</title>
 </head>
@@ -33,6 +34,16 @@
 			</div>
 		</nav>
 
+		<div class="py-3"></div>
+
+		<div class="row text-center align-items-center flex-grow-1 pt-5">
+			<div class="col-2">
+				<select selected="TITLE" id="country-list" class="form-select text-center" style="overflow-y: scroll; max-height: 300px;" data-live-search="true" data-live-search-style="startsWith" onchange="filterScriptsByCountry(this.value)">
+					<option value="TITLE" disabled>Filter by country</option>
+					<option value="ALL">Show All</option>
+				</select>
+			</div>
+		</div>
 		<div class="row align-items-center flex-grow-1">
 			<div id="script-list" class="col">
 			</div>
@@ -60,6 +71,30 @@
     		    top: targetPosition,
     		    behavior: 'smooth'
     		});
+		}
+
+		function filterScriptsByCountry(countryId) {
+			var targetScriptsList = scriptsByCountry[countryId];
+
+			for (var currentCard of Array.from($("#script-list")[0].children)) {
+				var thisScriptId = currentCard.id.replace("script-card-", "");
+
+				if (targetScriptsList) {
+					if (targetScriptsList.includes(thisScriptId)) {
+						currentCard.hidden = false;
+					} else {
+						currentCard.hidden = true;
+					}
+				} else {
+					currentCard.hidden = false;
+				}
+			}
+
+			if (targetScriptsList) {
+				$("#country-list")[0].value = countryId;
+			} else {
+				$("#country-list")[0].value = "TITLE";
+			}
 		}
 
 		for(var currentScript in allScripts) {
@@ -96,12 +131,29 @@
 			description.textContent = thisScript.description;
 			colMain.appendChild(description);
 			var tip = document.createElement("p");
+			var bold = document.createElement("b");
 			tip.textContent = thisScript.tip;
-			colMain.appendChild(tip);
+			bold.appendChild(tip);
+			colMain.appendChild(bold);
+
+			var map = initNewScriptMap(currentScript, function() {filterScriptsByCountry(this.id)});
+			map.id = "script-card-" + currentScript + "-map";
+			map.scriptDestination = currentScript;
+			colLoc.appendChild(map);
 
 			// Append whole card to script list
 			scriptList.appendChild(card);
+			mapZoomToCountries(map.querySelector("svg"), thisScript.countries);
 		}
+
+		for (var i in scriptsByCountry) {
+			var option = document.createElement("option");
+			option.value = i;
+			option.innerHTML = countriesIso2[i];
+
+			$("#country-list")[0].appendChild(option);
+		}
+		$("#country-list")[0].value = "TITLE";
 
 		scrollToHash();
 
