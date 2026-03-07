@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="static/css/styles.css">
 
 	<title>ScriptGuesser</title>
 </head>
@@ -50,7 +51,8 @@
 					<input id="guess-text" type="text" class="form-control text-center" placeholder="Your guess">
 					<button id="guess-btn" class="btn btn-primary text-white" onclick="sendUserGuess(guessText.value)">Guess!</button>
 				</div>
-				<div id="control-bar" class="input-group mb-3 input-group-lg align-items-center justify-content-center" hidden>
+				<div id="control-bar" class="mb-3 input-group-lg align-items-center justify-content-center text-center" hidden>
+					<a id="learn-more-button" class="btn btn-secondary text-white" type="submit" href="learn.html" target="_blank">Learn More</a>
 					<button id="next-round-button" class="btn btn-primary text-white" type="submit" onclick="nextRound()">Next Round</button>
 				</div>
 			</div>
@@ -105,9 +107,15 @@
 				</div>
 			</div>
 		</div>
-		<div class="row d-flex align-items-center justify-content-center">
-			<div class="col">
-				
+		<div id="script-information" hidden>
+			<div class="row d-flex justify-content-center m-2 p-2 border">
+				<div class="col-md-8" id="script-information-main">
+					<p id="script-information-description"></p>
+					<b id="script-information-tip"></b>
+				</div>
+				<div class="col-md-4" id="script-information-map">
+					
+				</div>
 			</div>
 		</div>
 	</div>
@@ -157,6 +165,30 @@
 		var game = {
 			"rounds": [],
 			"currentRound": -1
+		}
+
+		function showScriptInfo(scriptId) {
+			var script = allScripts[scriptId];
+
+			if (!script) {
+				console.error("Unable to load script information for script id '" + scriptId + "'.");
+				return;
+			}
+
+			$("#script-information-description")[0].innerText = script.description;
+			$("#script-information-tip")[0].innerText = script.tip;
+			mapHighlightCountries(scriptInfoMap.querySelector("svg"), script.countries);
+
+			$("#script-information")[0].hidden = false;
+
+			mapZoomToCountries(scriptInfoMap.querySelector("svg"), script.countries);
+		}
+
+		function hideScriptInfo() {
+			$("#script-information-description")[0].innerText = "";
+			$("#script-information-tip")[0].innerText = "";
+
+			$("#script-information")[0].hidden = true;
 		}
 
 		function fitText(element, maxFont = 80, minFont = 10) {
@@ -256,6 +288,7 @@
 			setConfigButtonLocked(true);
 			clearStatus();
 			clearGuessText();
+			hideScriptInfo();
 			setScriptLabel(game.rounds[round].sentence);
 			setControlBarVisibility(false);
 			setGuessBarVisibility(true);
@@ -292,6 +325,8 @@
 			setGuessBarVisibility(false);
 			setControlBarVisibility(true);
 			setConfigButtonLocked(false);
+			showScriptInfo(game.rounds[game.currentRound].script);
+			$("#learn-more-button")[0].href = "learn.html#" + game.rounds[game.currentRound].script;
 			$("#next-round-button")[0].focus();
 		}
 
@@ -382,6 +417,11 @@
 			configurable: true,
 			enumerable: false
 		});
+
+		// Init script info map
+		var scriptInfoMap = initNewMap(function() {});
+		scriptInfoMap.id = "script-information-map-div";
+		$("#script-information-map")[0].appendChild(scriptInfoMap);
 
 		// Start round
 		nextRound();

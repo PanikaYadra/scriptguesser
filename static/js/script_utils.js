@@ -67,7 +67,11 @@ function translateSentence(destScript, sentence) {
 	return data.sentences[0].trans;
 }
 
-function mapHighlightCountries(svg, countryCodes) {
+function mapHighlightCountries(svg, countryCodes, clearPriorHighlights = true) {
+	if (clearPriorHighlights) {
+		svg.querySelectorAll("g").forEach(el => el.classList.remove("highlighted"));
+	}
+
 	for (var currentCountry in countryCodes) {
 		var countryCode = countryCodes[currentCountry];
 		var currentCountrySVGElement = svg.querySelector("#" + countryCode);
