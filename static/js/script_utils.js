@@ -1,5 +1,8 @@
 const googleTranslateBaseUrl = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&dt=t&dt=bd&dj=1";
 
+const staticFolder = "static/";
+const jsonFolder = staticFolder + "json/";
+
 var allScripts = [];
 var wordlist = [];
 var countriesIso2 = {};
@@ -12,15 +15,15 @@ $.ajaxSetup({
    	async: false
 });
 
-$.getJSON("static/scripts.json", function(json) {
+$.getJSON(jsonFolder + "scripts.json", function(json) {
 	allScripts = json;
 });
 
-$.getJSON("static/countries_iso2.json", function(json) {
+$.getJSON(jsonFolder + "countries_iso2.json", function(json) {
 	countriesIso2 = json;
 });
 
-$.getJSON("static/wordlist.json", function(json) {
+$.getJSON(jsonFolder + "wordlist.json", function(json) {
 	wordlist = json;
 });
 

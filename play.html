@@ -11,6 +11,7 @@
 <body>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+	<script src="static/js/script_utils.js"></script>
 
 	<div class="container-fluid bg-dark min-vh-100 d-flex flex-column text-white">
 		<nav class="navbar bg-primary navbar-dark fixed-top">
@@ -117,43 +118,6 @@
 		const guessText = $("#guess-text")[0];
 		const scriptLabel = $("#script-lbl")[0];
 		const uiConfigCountryList = $("#config-script-list")[0];
-
-		const googleTranslateBaseUrl = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&dt=t&dt=bd&dj=1";
-
-		var allScripts = [];
-		var wordlist = [];
-		var countriesIso2 = {};
-		var scriptsByCountry = {};
-
-		// Load JSON files
-		$.ajaxSetup({
-    		async: false
-		});
-
-		$.getJSON("static/scripts.json", function(json) {
-			allScripts = json;
-		});
-
-		$.getJSON("static/countries_iso2.json", function(json) {
-			countriesIso2 = json;
-		});
-
-		$.getJSON("static/wordlist.json", function(json) {
-			wordlist = json;
-		});
-
-		// Populate arrays/objects
-		for (var currentScript in allScripts) {
-			for (var currentCountry in allScripts[currentScript].countries) {
-				var countryCode = allScripts[currentScript].countries[currentCountry];
-
-				if (countryCode in scriptsByCountry) {
-					scriptsByCountry[countryCode].push(allScripts[currentScript]["id"]);
-				} else {
-					scriptsByCountry[countryCode] = [ allScripts[currentScript]["id"] ];
-				}
-			}
-		}
 
 		// Prepare config
 		var config = {
@@ -329,29 +293,6 @@
 			setControlBarVisibility(true);
 			setConfigButtonLocked(false);
 			$("#next-round-button")[0].focus();
-		}
-
-		function translateSentence(destScript, sentence) {
-			var destLang = destScript;
-			var data = "";
-
-			/*var res = await fetch(googleTranslateBaseUrl + "&tl=" + destLang + "&q=" + encodeURI(sentence));
-			data = await res.json();*/
-
-			var request = new XMLHttpRequest();
-			request.open("GET", googleTranslateBaseUrl + "&tl=" + destLang + "&q=" + encodeURI(sentence), false);
-			request.onload = function() {
-				data = JSON.parse(request.responseText);
-			}
-			request.send(null);
-
-			if (request.status === 200) {
-				res = request;
-			} else {
-				console.log("Failed to fetch translation.");
-			}
-
-			return data.sentences[0].trans;
 		}
 
 		function setConfigButtonLocked(isLocked = true) {
