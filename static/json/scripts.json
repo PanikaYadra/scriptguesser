@@ -8,7 +8,10 @@
     "regions": [],
     "example_text": "في نهاية المطاف، فإن القول بأنك لا تهتم بالحق في الخصوصية لأنه ليس لديك ما تخفيه لا يختلف عن القول بأنك لا تهتم بحرية التعبير لأنه ليس لديك ما تقوله.",
     "description": "The Arabic script is the writing system for the Arabic language and is the second most used writing system in the world by countries using it and the third most used by number of users. It is written from right to left and has been used to write Arabic books like the Quran.",
-    "tip": "The Arabic script can be recognized by the very round letters featuring many curves and dots. You might also notice, that the script looks very \"flowing\" and connected."
+    "tip": "The Arabic script can be recognized by the very round letters featuring many curves and dots. You might also notice, that the script looks very \"flowing\" and connected.",
+    "confusables": [
+      ["hebrew", 2]
+    ]
   },
   "bengali": {
     "id": "bengali",
@@ -19,7 +22,13 @@
     "regions": [],
     "example_text": "একজন মানুষকে বন্দুক দিলে সে ব্যাংক ডাকাতি করতে পারবে, কিন্তু একজন মানুষকে ব্যাংক দিলে সে পৃথিবী ডাকাতি করতে পারবে।",
     "description": "The Bengali script is the writing system of the Bengali language primarily spoken in the Bengal region. The script is used by over 300 million people making it the 6th most commonly used writing system in the world.",
-    "tip": "Bengali looks similar to Devanagari (Hindi) in the way, that it also uses the horizontal line going through most letters, but can be recognized by the small triangular shapes on the bottom of many characters."
+    "tip": "Bengali looks similar to Devanagari (Hindi) in the way, that it also uses the horizontal line going through most letters, but can be recognized by the small triangular shapes on the bottom of many characters.",
+    "confusables": [
+      ["bengali_assamese", 5],
+      ["devanagari_hindi", 3],
+      ["devanagari_marathi", 3],
+      ["gurmukhi_punjabi", 3]
+  ]
   },
   "bengali_assamese": {
     "id": "bengali_assamese",
@@ -30,7 +39,13 @@
     "regions": [],
     "example_text": "মানুহ এজনক বন্দুক দিয়ক আৰু সি বেংক লুটিব পাৰে, কিন্তু মানুহ এজনক বেংক দিয়ক, আৰু সি পৃথিৱীখন লুটিব পাৰে।",
     "description": "The Bengali-Assamese script is used for the Bengali and Assamese language spoken in South Asia.",
-    "tip": "The Bengali-Assamese script looks very similar to the Bengali script, however, it can be recognized by the the strikes through some of the triangles (this character: ৰ)."
+    "tip": "The Bengali-Assamese script looks very similar to the Bengali script, however, it can be recognized by the the strikes through some of the triangles (this character: ৰ).",
+    "confusables": [
+      ["bengali", 5],
+      ["devanagari_hindi", 3],
+      ["devanagari_marathi", 3],
+      ["gurmukhi_punjabi", 3]
+  ]
   },
   "cyrillic_kyrgyz": {
     "id": "cyrillic_kyrgyz",
@@ -41,7 +56,12 @@
     "regions": [],
     "example_text": "Акыр-аягы, жашыра турган эч нерсеңиз жок болгондуктан, жеке жашоого болгон укукка маани бербейм деп талашуу, айта турган эч нерсеңиз жок болгондуктан, сөз эркиндигине маани бербейм деп айтуудан эч айырмасы жок.",
     "description": "While the Perso-Arabic script has been used by the Kyrgyz language historically, today, a modified cyrillic script is used. While mostly identical to Russian cyrillic with the exception of the three letters listed below, if you can read cyrillic, you will notice the words do not sound slavic at all.",
-    "tip": "The Kyrgyz script, being a cyrillic script, looks similar to Russian, however, the letters 'Ң', 'Ө' and 'Ү' are not found in Russian. The letter 'Ң' is good indicator for Kyrgyz since it is mostly found in several Turkic languages, most notably Kyrgyz and Kazakh."
+    "tip": "The Kyrgyz script, being a cyrillic script, looks similar to Russian, however, the letters 'Ң', 'Ө' and 'Ү' are not found in Russian. The letter 'Ң' is good indicator for Kyrgyz since it is mostly found in several Turkic languages, most notably Kyrgyz and Kazakh.",
+    "confusables": [
+      ["cyrillic_mongolian", 5],
+      ["cyrillic_russian", 4],
+      ["cyrillic_ukrainian", 4]
+    ]
   },
   "cyrillic_mongolian": {
     "id": "cyrillic_mongolian",
@@ -52,7 +72,12 @@
     "regions": [],
     "example_text": "Эцсийн дүндээ танд нуух зүйл байхгүй учраас хувийн нууцыг хамгаалах эрхийг үл тоомсорлож байна гэж маргах нь танд хэлэх зүйлгүй учраас үг хэлэх эрх чөлөөг үл тоомсорлож байгаагаас ялгаагүй юм.",
     "description": "Before the introduction of the cyrillic script for the Mongolian language in the 1940s, Mongolian used a script called the Hudum Mongol bichig and is still in use in parts of Mongolia and China today. Mongolian cyrillic is identical to Russian cyrillic with the addition of two characters.",
-    "tip": "Mongolian will look very similar to Russian and other cyrillic scripts. Unlike Russian, the letters 'Ө' and 'Ү' are present in Mongolian, however, they are also present in Turkic scripts like Kazakh and Kyrgyz. Mongolian often features double vowels like 'ээ', 'аа' or 'өө', which are rather rare in Russian, but also common in Turkic languages."
+    "tip": "Mongolian will look very similar to Russian and other cyrillic scripts. Unlike Russian, the letters 'Ө' and 'Ү' are present in Mongolian, however, they are also present in Turkic scripts like Kazakh and Kyrgyz. Mongolian often features double vowels like 'ээ', 'аа' or 'өө', which are rather rare in Russian, but also common in Turkic languages.",
+    "confusables": [
+      ["cyrillic_kyrgyz", 5],
+      ["cyrillic_russian", 4],
+      ["cyrillic_ukrainian", 4]
+    ]
   },
   "cyrillic_russian": {
     "id": "cyrillic_russian",
@@ -63,7 +88,12 @@
     "regions": [],
     "example_text": "В конечном счете, утверждать, что вам безразлично право на неприкосновенность частной жизни, потому что вам нечего скрывать, ничем не отличается от утверждения, что вам безразлична свобода слова, потому что вам нечего сказать.",
     "description": "The Russian script is a cyrillic script consisting of 33 letters. Cyrillic is a successor of the Greek script and is used to write many Slavic, Turkic, Uralic and other languges.",
-    "tip": "Cyrillic looks similar to both Greek and Latin and you might recognize letters similar or identical to both scripts. Cyrillic looks kind of \"harsh\" with sharp edges and many straight lines. Keep in mind, that Russian is by far not the only cyrillic script and there exist many variations of it."
+    "tip": "Cyrillic looks similar to both Greek and Latin and you might recognize letters similar or identical to both scripts. Cyrillic looks kind of \"harsh\" with sharp edges and many straight lines. Keep in mind, that Russian is by far not the only cyrillic script and there exist many variations of it.",
+    "confusables": [
+      ["cyrillic_kyrgyz", 4],
+      ["cyrillic_mongolian", 4],
+      ["cyrillic_ukrainian", 4]
+    ]
   },
   "cyrillic_ukrainian": {
     "id": "cyrillic_ukrainian",
@@ -74,7 +104,12 @@
     "regions": [],
     "example_text": "Зрештою, стверджувати, що вам байдуже право на приватність, бо вам нема чого приховувати, нічим не відрізняється від того, що ви кажете, що вам байдуже свобода слова, бо вам нема чого сказати.",
     "description": "The Ukrainian script is a cyrillic script and is closely related to other cyrillic scripts like Russian, Belarusian and Bulgarian. While most letters in the Ukrainian alphabet appear in most cyrillic scripts as well, there are some exceptions as shown below.",
-    "tip": "Ukrainian cyrillic looks similar to Russian cyrillic and other cyrillic scripts, however the letters 'Ґ', 'Є' and 'І' do not appear in Russian (yet there are similar looking letters in Russian like 'Г' and 'Э'), but are present in other cyrillic scripts. The letter 'Ї', on the other hand, is more or less unique to Ukrainian within the today relevant cyrillic scripts."
+    "tip": "Ukrainian cyrillic looks similar to Russian cyrillic and other cyrillic scripts, however the letters 'Ґ', 'Є' and 'І' do not appear in Russian (yet there are similar looking letters in Russian like 'Г' and 'Э'), but are present in other cyrillic scripts. The letter 'Ї', on the other hand, is more or less unique to Ukrainian within the today relevant cyrillic scripts.",
+    "confusables": [
+      ["cyrillic_kyrgyz", 4],
+      ["cyrillic_mongolian", 4],
+      ["cyrillic_russian", 4]
+    ]
   },
   "devanagari_hindi": {
     "id": "devanagari_hindi",
@@ -85,7 +120,13 @@
     "regions": [],
     "example_text": "किसी व्यक्ति को बंदूक दे दो तो वह बैंक लूट सकता है, लेकिन किसी व्यक्ति को बैंक दे दो तो वह पूरी दुनिया लूट सकता है।",
     "description": "Hindi and over 120 other languages use the Devanagari script which is, with over 480 million active users, the 4th most commonly used writing system in the world.",
-    "tip": "Devanagari can be recognized by the horizontal line running across the top of most words. Assamese, Bengali, Marathi and Punjabi feature the line as well."
+    "tip": "Devanagari can be recognized by the horizontal line running across the top of most words. Assamese, Bengali, Marathi and Punjabi feature the line as well.",
+    "confusables": [
+      ["bengali", 3],
+      ["bengali_assamese", 3],
+      ["devanagari_marathi", 6],
+      ["gurmukhi_punjabi", 4]
+  ]
   },
   "devanagari_marathi": {
     "id": "devanagari_marathi",
@@ -96,7 +137,13 @@
     "regions": [],
     "example_text": "जेव्हा तुम्ही त्याच्या अगदी जवळ येतो, त्याच्या गाभ्याशी, प्रत्येक निवडीखाली, एकतर एक किंवा शून्य असते. तुम्ही काहीतरी करा किंवा नाही.",
     "description": "Marathi is a language spoken by about 83 million people, which makes it one of the most widely spoken native spoken languages in India. Marathi uses the Devanagari script and has some of the oldest literature of all modern Indian languages.",
-    "tip": "Marathi uses the Devanagari script with the addition of the (rather rarely used) character 'ळ', which looks like an infinity sign. Don't confuse it with 'क', which also appears in Hindi."
+    "tip": "Marathi uses the Devanagari script with the addition of the (rather rarely used) character 'ळ', which looks like an infinity sign. Don't confuse it with 'क', which also appears in Hindi.",
+    "confusables": [
+      ["bengali", 3],
+      ["bengali_assamese", 3],
+      ["devanagari_hindi", 6],
+      ["gurmukhi_punjabi", 4]
+  ]
   },
   "dzongkha": {
     "id": "dzongkha",
@@ -107,7 +154,8 @@
     "regions": [],
     "example_text": "ཐད་ཀར་དུ་འབད་བ་ཅིན་ དཀར་ཆག་ཚུ་ཡོདཔ་ཨིན་ དེ་འབདཝ་ད་ དཀར་ཆག་གི་རྩ་བ་ལུ་བལྟ་བ་ཅིན་ གདམ་ཁ་རེ་རེའི་འོག་ལུ་ ༡ དང་ ༠ གཉིས་ཆ་ར་ཡོདཔ་ཨིན། ཁྱོད་ཀྱིས་ལཱ་ག་ཅི་ར་འབད་རུང་ འབད་མ་བཏུབ་ཨིན།",
     "description": "Dzongkha is a South Tibetic Language primarily spoken in Bhutan, which uses the Tibetic script. Dzongkha has about 171k native speakers and about 640k total speakers. The word 'dzongkha' means 'the language of the fortress'.",
-    "tip": "Dzongkha features very unique looking character with long droops at the right side of the letter, sometimes being straight and sometimes bent."
+    "tip": "Dzongkha features very unique looking character with long droops at the right side of the letter, sometimes being straight and sometimes bent.",
+    "confusables": []
   },
   "greek": {
     "id": "greek",
@@ -118,7 +166,13 @@
     "regions": [],
     "example_text": "Αυτό είναι ένα παιχνίδι μηδενικού αθροίσματος. Υπολογίστε όλα τα αποτελέσματα. Παίζετε ένα παιχνίδι που έχετε ήδη χάσει.",
     "description": "The Greek script has been used since the late 9th or early 8th century BC and is the ancestor of many commonly used scripts today like Latin or Cyrillic.",
-    "tip": "You may be able to recognize some Greek letters from maths. Some Greek letters look very similar to cyrillic letters, however, the lower case letters in Greek tend to have softer shapes. Also, letters like 'ξ' or 'ψ' are not found in commonly used cyrillic scripts."
+    "tip": "You may be able to recognize some Greek letters from maths. Some Greek letters look very similar to cyrillic letters, however, the lower case letters in Greek tend to have softer shapes. Also, letters like 'ξ' or 'ψ' are not found in commonly used cyrillic scripts.",
+    "confusables": [
+      ["cyrillic_kyrgyz", 3],
+      ["cyrillic_mongolian", 3],
+      ["cyrillic_russian", 3],
+      ["cyrillic_ukrainian", 3]
+    ]
   },
   "gujarati": {
     "id": "gujarati",
@@ -129,7 +183,10 @@
     "regions": [],
     "example_text": "આ એક શૂન્ય-સમ રમત છે. બધા પરિણામોની ગણતરી કરો. તમે એક રમત રમી રહ્યા છો જે તમે પહેલાથી જ હારી ગયા છો.",
     "description": "The Gujarati script is derived of the Devanagari script and one of the official scripts in India. Interestingly, the Gujarati script is closely related to the Devanagari script despite lacking the characteristic horizontal line of Devanagari.",
-    "tip": "Gujarati looks somewhat similar to Devanagari (Hindi), but lacks the horizontal lime going through most letters in Hindi."
+    "tip": "Gujarati looks somewhat similar to Devanagari (Hindi), but lacks the horizontal lime going through most letters in Hindi.",
+    "confusables": [
+      ["devanagari_hindi", 1]
+    ]
   },
   "gurmukhi_punjabi": {
     "id": "gurmukhi_punjabi",
@@ -140,7 +197,13 @@
     "regions": [],
     "example_text": "ਇਹ ਇੱਕ ਜ਼ੀਰੋ-ਸਮ ਗੇਮ ਹੈ। ਸਾਰੇ ਨਤੀਜਿਆਂ ਦੀ ਗਣਨਾ ਕਰੋ। ਤੁਸੀਂ ਇੱਕ ਗੇਮ ਖੇਡ ਰਹੇ ਹੋ ਜੋ ਤੁਸੀਂ ਪਹਿਲਾਂ ਹੀ ਹਾਰ ਚੁੱਕੇ ਹੋ।",
     "description": "Gurmukhi is a script used by the Punjabi language spoken in Punjab, India. While Punjabi is spoken in some parts of Pakistan as well, in Pakistan, it is written using the Perso-Arabic script.",
-    "tip": "Punjabi has similarities with Hindi (or other Devanagari scripts), but tends to look softer and sometimes breaks the horizontal line above some characters. The letters, 'ਨ', 'ਲ' and 'ਅ' are also unique to Punjabi."
+    "tip": "Punjabi has similarities with Hindi (or other Devanagari scripts), but tends to look softer and sometimes breaks the horizontal line above some characters. The letters, 'ਨ', 'ਲ' and 'ਅ' are also unique to Punjabi.",
+    "confusables": [
+      ["bengali", 3],
+      ["bengali_assamese", 3],
+      ["devanagari_hindi", 4],
+      ["devanagari_marathi", 4]
+  ]
   },
   "hangul_korean": {
     "id": "hangul_korean",
@@ -151,7 +214,11 @@
     "regions": [],
     "example_text": "악마들. 그들은 멈추지 않고 계속 활동한다. 항상 유혹하고, 조종하고, 우리를 지배한다. 네가 나와 함께 있고, 내가 널 창조했다 해도, 아무 소용이 없다.",
     "description": "Hangul is the modern script used for the Korean language. Before the creation of Hangul in 1446, Korea used Chinese characters called Hanja.",
-    "tip": "Hangul features very unique characters. There are circles and 90° angles present in many characters. Compared to Kanji/Han, Hangul characters looks more simplistic and the circles make Hangul look different than Kana."
+    "tip": "Hangul features very unique characters. There are circles and 90° angles present in many characters. Compared to Kanji/Han, Hangul characters looks more simplistic and the circles make Hangul look different than Kana.",
+    "confusables": [
+      ["han_chinese", 2],
+      ["japanese", 3]
+    ]
   },
   "han_chinese": {
     "id": "han_chinese",
@@ -162,7 +229,11 @@
     "regions": [],
     "example_text": "恶魔。它们永不停歇。它们时刻活跃。它们诱惑。它们操纵。它们掌控着我们。即便你与我同在，即便你由我创造，也无济于事。我们都必须独自面对它们。",
     "description": "Han, the Chinese characters, represent the only one of the four independently developed writing systems that remains in use today. Unlike traditional letters of an alphabet that reflect a specific sound, Chinese characters carry meaning in themselves. As of 2025, over 100k Chinese characters have been identified.",
-    "tip": "Chinese has a very complex writing system and thus many of its characters looks detailed and difficult to write. Japanese uses Chinese characters as well, however, they are almost always found in combination with Kana."
+    "tip": "Chinese has a very complex writing system and thus many of its characters looks detailed and difficult to write. Japanese uses Chinese characters as well, however, they are almost always found in combination with Kana.",
+    "confusables": [
+      ["hangul_korean", 2],
+      ["japanese", 4]
+    ]
   },
   "hebrew": {
     "id": "hebrew",
@@ -173,7 +244,10 @@
     "regions": [],
     "example_text": "שדים. הם לא מפסיקים לעבוד. הם תמיד פעילים. הם מפתים. הם מתמרנים. הם שולטים בנו. ואפילו שאתה איתי, למרות שאני יצרתי אותך, זה לא משנה. כולנו חייבים להתמודד איתם לבד.",
     "description": "The Hebrew alphabet is the script used for the Hebrew language. Like Arabic, Hebrew is written from right to left.",
-    "tip": "Hebrew can look similar to Arabic, but looks much more square with sharp angles, as well as short strokes on the top left of many letters. In contrast to Arabic, Hebrew letters also do not look connected at all."
+    "tip": "Hebrew can look similar to Arabic, but looks much more square with sharp angles, as well as short strokes on the top left of many letters. In contrast to Arabic, Hebrew letters also do not look connected at all.",
+    "confusables": [
+      ["arabic", 2]
+  ]
   },
   "inuktitut": {
     "id": "inuktitut",
@@ -184,7 +258,8 @@
     "regions": [],
     "example_text": "ᑕᐃᒪᓕᑭᐊᖅ ᐊᓯᔾᔩᓂᖅ ᓯᓚᕐᔪᐊᕐᒥ ᑕᒫᓃᑐᐃᓐᓇᕐᓂᐅᑉᐸᑦ, ᓴᖅᑭᔮᕐᓂᒃᑯᑦ... ᓱᓕᓂᒃᑯᑦ ᑲᓐᖑᓱᒃᑲᓗᐊᖅᑎᓪᓗᑕ ᓴᓪᓗᓂᕐᒥᒃ?",
     "description": "Inuktitut syllabics is a writing system used by the Inuktitut-speaking Inuit in Nunavut, Canada. Inuktitut being a collective term for many Inuit dialects.",
-    "tip": "Inuktitut syllabics are very distinct. You can recognize them by the very clear triangles and bow-like shapes, as well as by the the little 'b'- and 'cb'-looking shapes next to some characters ('ᒃ' and 'ᖅ'). While extremely rare on Google Maps, these syllabics can sometimes be seen in the north of Canada."
+    "tip": "Inuktitut syllabics are very distinct. You can recognize them by the very clear triangles and bow-like shapes, as well as by the the little 'b'- and 'cb'-looking shapes next to some characters ('ᒃ' and 'ᖅ'). While extremely rare on Google Maps, these syllabics can sometimes be seen in the north of Canada.",
+    "confusables": []
   },
   "japanese": {
     "id": "japanese",
@@ -195,7 +270,11 @@
     "regions": [],
     "example_text": "エリオット、世界が危険なのは、悪事を働く人々のせいではなく、見て見ぬふりをして何もしない人々のせいなのです。",
     "description": "Japanese consists of 3 types of characters: Hiragana, Katakana and Kanji. Kanji are Chinese characters, while Kana letters correspond to syllables.",
-    "tip": "Japanese can be recognized by the combination of complex looking characters (Kanji) and simpler looking ones (Kana). If there are only complex characters, it's Chinese. If there are only simple characters, it's probably Korean Hangul."
+    "tip": "Japanese can be recognized by the combination of complex looking characters (Kanji) and simpler looking ones (Kana). If there are only complex characters, it's Chinese. If there are only simple characters, it's probably Korean Hangul.",
+    "confusables": [
+      ["han_chinese", 4],
+      ["hangul_korean", 3]
+    ]
   },
   "kannada": {
     "id": "kannada",
@@ -206,7 +285,11 @@
     "regions": [],
     "example_text": "ವೀಕ್ಷಣೆಯ ಅಡಿಯಲ್ಲಿ, ನಾವು ಕಡಿಮೆ ಸ್ವತಂತ್ರವಾಗಿ ವರ್ತಿಸುತ್ತೇವೆ, ಅಂದರೆ ನಾವು ಪರಿಣಾಮಕಾರಿಯಾಗಿ ಕಡಿಮೆ ಸ್ವತಂತ್ರರಾಗಿದ್ದೇವೆ.",
     "description": "The Kannada script is an Indic script which is primarily used to write the Kannada language. The Kannada and Telugu scripts are so highly mutually intelligible, that they are often considered regional variants of a single script.",
-    "tip": "Kannada is a very round and smooth script with a lot of curves and small circles. It looks very similar to Telugu, but features a long hook at the top of many characters, which looks like the half of a rounded arrow or a horizontal walking stick (for example here: 'ದು')."
+    "tip": "Kannada is a very round and smooth script with a lot of curves and small circles. It looks very similar to Telugu, but features a long hook at the top of many characters, which looks like the half of a rounded arrow or a horizontal walking stick (for example here: 'ದು').",
+    "confusables": [
+      ["sinhala", 2],
+      ["telugu", 3]
+    ]
   },
   "khmer": {
     "id": "khmer",
@@ -217,7 +300,11 @@
     "regions": [],
     "example_text": "ទីបំផុត ការប្រកែកថាអ្នកមិនខ្វល់ពីសិទ្ធិឯកជនភាព ព្រោះអ្នកគ្មានអ្វីត្រូវលាក់ គឺមិនខុសពីការនិយាយថាអ្នកមិនខ្វល់នឹងការនិយាយដោយសេរី ព្រោះអ្នកគ្មានអ្វីត្រូវនិយាយនោះទេ។",
     "description": "The Khmer script is the script for the Khmer language primarily spoken in Cambodia. Khmer is an Indic script and an ancestor of the Thai script, thus sharing some similarities with Thai.",
-    "tip": "Khmer can look fairly similar to Thai and Lao but tends to look more complex. It has a generally curvy look and lacks the many small circles found in the Thai and Lao scripts."
+    "tip": "Khmer can look fairly similar to Thai and Lao but tends to look more complex. It has a generally curvy look and lacks the many small circles found in the Thai and Lao scripts.",
+    "confusables": [
+      ["lao", 3],
+      ["thai", 3]
+    ]
   },
   "lao": {
     "id": "lao",
@@ -228,7 +315,11 @@
     "regions": [],
     "example_text": "ໃນທີ່ສຸດ, ການໂຕ້ຖຽງວ່າທ່ານບໍ່ສົນໃຈສິດທິໃນຄວາມເປັນສ່ວນຕົວເພາະວ່າທ່ານບໍ່ມີຫຍັງປິດບັງແມ່ນບໍ່ແຕກຕ່າງຈາກການເວົ້າວ່າທ່ານບໍ່ສົນໃຈກັບຄໍາເວົ້າທີ່ບໍ່ເສຍຄ່າເພາະວ່າທ່ານບໍ່ມີຫຍັງທີ່ຈະເວົ້າ.",
     "description": "The Lao script was adapted from the Khmer script and is thus an Indic script used to write the Lao language and other languages spoken in Laos. It developed alongside the Thai script, both sharing similarities.",
-    "tip": "Just like Thai, the Lao script is curvy with many small circles in the letters. It tends to have less straight lines and sharp edges than Thai and looks rounder and simpler in general."
+    "tip": "Just like Thai, the Lao script is curvy with many small circles in the letters. It tends to have less straight lines and sharp edges than Thai and looks rounder and simpler in general.",
+    "confusables": [
+      ["khmer", 3],
+      ["thai", 4]
+    ]
   },
   "latin_vietnamese": {
     "id": "latin_vietnamese",
@@ -239,7 +330,8 @@
     "regions": [],
     "example_text": "Tóm lại, việc cho rằng bạn không quan tâm đến quyền riêng tư vì bạn không có gì để che giấu cũng chẳng khác gì việc nói rằng bạn không quan tâm đến quyền tự do ngôn luận vì bạn không có gì để nói.",
     "description": "The Vietnamese script is based on the Latin alphabet with a lot of diacritics. Prior to the Latin alphabet, Vietnamese used a script adapted from Chinese characters, until Portuguese and Italian Jesuit missionaries began using the Latin script as early as 1620 to transribe the Vietnamese language.",
-    "tip": "The Vietnamese script uses the Latin script as base and thus consists mainly of Latin letters. However, Vietnamese makes heavy use of diacritics and uses new letters like 'Đ', making it somewhat recognizable. Vietnamese also has very short words often consisting of only one syllable."
+    "tip": "The Vietnamese script uses the Latin script as base and thus consists mainly of Latin letters. However, Vietnamese makes heavy use of diacritics and uses new letters like 'Đ', making it somewhat recognizable. Vietnamese also has very short words often consisting of only one syllable.",
+    "confusables": []
   },
   "malayalam": {
     "id": "malayalam",
@@ -250,7 +342,11 @@
     "regions": [],
     "example_text": "നിരീക്ഷണത്തിൽ, നമ്മൾ കുറച്ച് സ്വതന്ത്രമായി പ്രവർത്തിക്കുന്നു, അതായത് ഫലപ്രദമായി നമുക്ക് കുറച്ച് സ്വതന്ത്രത മാത്രമേ ഉണ്ടാകൂ.",
     "description": "The Malayalam script is primarily used in Kerala, India for the Malayalam language. It is closely related with the Telugu script.",
-    "tip": "Almost every character in the Malayalam script looks round at the top and many letters generally resemble upside-down U-shapes. While looking somewhat similar to Tamil or Telugu, Malayalam does not feature many straight lines and 90° angles like Tamil and lacks diacritics like Telugu has."
+    "tip": "Almost every character in the Malayalam script looks round at the top and many letters generally resemble upside-down U-shapes. While looking somewhat similar to Tamil or Telugu, Malayalam does not feature many straight lines and 90° angles like Tamil and lacks diacritics like Telugu has.",
+    "confusables": [
+      ["tamil", 1],
+      ["telugu", 1]
+    ]
   },
   "meitei_mayek": {
     "id": "meitei_mayek",
@@ -261,7 +357,8 @@
     "regions": [],
     "example_text": "ꯑꯔꯣꯏꯕꯗꯥ, ꯅꯍꯥꯛꯅꯥ ꯂꯣꯠꯄꯥ ꯌꯥꯕꯥ ꯄꯣꯠꯁꯛ ꯑꯃꯠꯇꯥ ꯂꯩꯇꯕꯅꯥ ꯃꯔꯝ ꯑꯣꯏꯗꯨꯅꯥ ꯅꯍꯥꯛꯅꯥ ꯄ꯭ꯔꯥꯏꯚꯦꯁꯤꯒꯤ ꯍꯛ ꯑꯗꯨꯒꯤ ꯃꯇꯥꯡꯗꯥ ꯋꯥꯈꯜ ꯇꯥꯗꯦ ꯍꯥꯌꯅꯥ ꯂꯧꯕꯥ ꯍꯥꯌꯕꯁꯤ ꯅꯍꯥꯛꯅꯥ ꯍꯥꯌꯕꯥ ꯌꯥꯕꯥ ꯋꯥꯐꯝ ꯑꯃꯠꯇꯥ ꯂꯩꯇꯕꯅꯥ ꯃꯔꯝ ꯑꯣꯏꯗꯨꯅꯥ ꯐ꯭ꯔꯤ ꯁ꯭ꯄꯤꯆꯀꯤ ꯃꯇꯥꯡꯗꯥ ꯋꯥꯈꯜ ꯇꯥꯗꯦ ꯍꯥꯌꯕꯁꯤꯒꯥ ꯈꯦꯠꯅꯕꯥ ꯂꯩꯇꯦ꯫",
     "description": "The Meitei script, often called Manipuri, is primarily used in Manipur and Assam in India. It was used until the 18th century, then replaced by Bengali, before it was 'revived' in the 20th century. Since 2021, the Government of Manipur uses the Meitei script alongside the Bengali-Assamese script again.",
-    "tip": "The Meitei script can be recognized by the many straight vertical and horizontal lines and 90° angles. Many letters look like grids or bars, while others feature wide curves. Many letters have a long stroke above them which looks like an elongated grave accent ('`')."
+    "tip": "The Meitei script can be recognized by the many straight vertical and horizontal lines and 90° angles. Many letters look like grids or bars, while others feature wide curves. Many letters have a long stroke above them which looks like an elongated grave accent ('`').",
+    "confusables": []
   },
   "odia": {
     "id": "odia",
@@ -272,7 +369,8 @@
     "regions": [],
     "example_text": "ଶେଷରେ, ତୁମର ଲୁଚାଇବା ପାଇଁ କିଛି ନାହିଁ ବୋଲି ତୁମେ ଗୋପନୀୟତାର ଅଧିକାର ବିଷୟରେ ଚିନ୍ତା କରୁନାହଁ ବୋଲି ଯୁକ୍ତି କରିବା, ତୁମର କହିବା ପାଇଁ କିଛି ନାହିଁ ବୋଲି ତୁମେ ବାକ୍ ସ୍ୱାଧୀନତା ବିଷୟରେ ଚିନ୍ତା କରୁନାହଁ ବୋଲି କହିବାଠାରୁ ଭିନ୍ନ ନୁହେଁ।",
     "description": "The Odia or somtimes Oriya script is a Brahmic script mainly used in Odisha, India and partially in neighbouring states, having developed for over 1000 years. Contrary to intuition, Odia is closer related to Bengali and Devanagari than to scripts like Telugu or Kannada, even though the round appearance might suggest otherwise. The round bow over most Odia letters actually stems from the characteristic line above Bengali and Devanagari letters.",
-    "tip": "The Odia script has a very distinct look, featuring rounded characters with a semi-circle at the top. They loosely resemble the skull emoji ('💀') making it easy to remember. Some characters will also display a diacritic in the form of a wide curve above the letter."
+    "tip": "The Odia script has a very distinct look, featuring rounded characters with a semi-circle at the top. They loosely resemble the skull emoji ('💀') making it easy to remember. Some characters will also display a diacritic in the form of a wide curve above the letter.",
+    "confusables": []
   },
   "sinhala": {
     "id": "sinhala",
@@ -283,7 +381,11 @@
     "regions": [],
     "example_text": "නිරීක්ෂණය යටතේ, අපි අඩු නිදහසකින් ක්‍රියා කරමු, එයින් අදහස් කරන්නේ අපි ඵලදායී ලෙස අඩු නිදහසකින් ක්‍රියා කරන බවයි.",
     "description": "The Sinhala script is believed to be derived from the Grantha script, thus making it an Indic language.",
-    "tip": "Like other Brahmic scripts, Sinhalese characters look very round. It includes many spirals and looks somewhat similar to Telugu or Kannada but without the diacritics above many characters. The famous letter 'ඞ' which looks like a character from the game 'Among Us' stems from the Sinhala script."
+    "tip": "Like other Brahmic scripts, Sinhalese characters look very round. It includes many spirals and looks somewhat similar to Telugu or Kannada but without the diacritics above many characters. The famous letter 'ඞ' which looks like a character from the game 'Among Us' stems from the Sinhala script.",
+    "confusables": [
+      ["kannada", 2],
+      ["telugu", 2]
+    ]
   },
   "tamil": {
     "id": "tamil",
@@ -294,7 +396,8 @@
     "regions": [],
     "example_text": "கண்காணிப்பின் கீழ், நாம் குறைவாக சுதந்திரமாக செயல்படுகிறோம், அதாவது நாம் திறம்பட குறைவாக சுதந்திரமாக இருக்கிறோம்.",
     "description": "The Tamil script is used in India and Sri Lanka, as well as in Singapore and Malaysia to a lesser degree to write the Tamil language and other minority languages. While in theory related to Khmer, the two systems look noticeably different.",
-    "tip": "Tamil is easy to recognize as it combines soft curves and straight lines with hard 90° angles. Tamil can also be recognized by the diacritics in form of singular dots centered above some characters."
+    "tip": "Tamil is easy to recognize as it combines soft curves and straight lines with hard 90° angles. Tamil can also be recognized by the diacritics in form of singular dots centered above some characters.",
+    "confusables": []
   },
   "telugu": {
     "id": "telugu",
@@ -305,7 +408,11 @@
     "regions": [],
     "example_text": "పరిశీలనలో ఉన్నప్పుడు, మనం తక్కువ స్వేచ్ఛగా ప్రవర్తిస్తాము, అంటే మనం సమర్థవంతంగా తక్కువ స్వేచ్ఛగా ఉంటాము.",
     "description": "The Telugu script is an Indic script spoken primarily in the Indian states of Andhra Pradesh and Telangana. It has extensive similarities with the Kannada script, causing both scripts to often be considered regional variants of the same script.",
-    "tip": "The Telugu script looks very similar to the Kannada script, featuring very round and smooth letters with small circles as well. In contrast to Kannada, however, Telugu has many diacritics in the shape of small checkmarks above many letters."
+    "tip": "The Telugu script looks very similar to the Kannada script, featuring very round and smooth letters with small circles as well. In contrast to Kannada, however, Telugu has many diacritics in the shape of small checkmarks above many letters.",
+    "confusables": [
+      ["kannada", 3],
+      ["sinhala", 2]
+    ]
   },
   "thai": {
     "id": "thai",
@@ -316,6 +423,10 @@
     "regions": [],
     "example_text": "ท้ายที่สุดแล้ว การอ้างว่าคุณไม่สนใจสิทธิในความเป็นส่วนตัวเพราะคุณไม่มีอะไรต้องปกปิด ก็ไม่ต่างอะไรกับการอ้างว่าคุณไม่สนใจเสรีภาพในการพูดเพราะคุณไม่มีอะไรจะพูด",
     "description": "The Thai script is used to write Thai and is derived from the Old Khmer script, making Thai an Indic writing system. Like the closely related Lao script, Thai does not use spaces.",
-    "tip": "Thai can be recognized by the many small circles in most characters. Compared to Lao, there are more straight lines and sharp edges in Thai. It also looks simpler than Khmer."
+    "tip": "Thai can be recognized by the many small circles in most characters. Compared to Lao, there are more straight lines and sharp edges in Thai. It also looks simpler than Khmer.",
+    "confusables": [
+      ["khmer", 3],
+      ["lao", 4]
+    ]
   }
 }

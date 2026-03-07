@@ -3,6 +3,18 @@ const googleTranslateBaseUrl = "https://translate.googleapis.com/translate_a/sin
 const staticFolder = "static/";
 const jsonFolder = staticFolder + "json/";
 
+const confusabilities = [
+	"Not Confusable",
+	"Very Low",
+	"Low",
+	"Moderate",
+	"High",
+	"Very High",
+	"Extremely High",
+	"Unintelligible Unless Spoken",
+	"Unintelligible"
+]
+
 var allScripts = [];
 var wordlist = [];
 var countriesIso2 = {};

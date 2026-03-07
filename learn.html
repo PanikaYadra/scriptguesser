@@ -100,14 +100,17 @@
 		for(var currentScript in allScripts) {
 			var thisScript = allScripts[currentScript];
 
+			// Whole card
 			var card = document.createElement("div");
 			card.id = "script-card-" + currentScript;
 			card.className = "border-top border-bottom py-3 my-5";
 
+			// Row
 			var row = document.createElement("div");
 			row.className = "row";
 			card.appendChild(row)
 
+			// Both columns
 			var colMain = document.createElement("div");
 			colMain.className = "col-md-8";
 			row.appendChild(colMain);
@@ -115,11 +118,13 @@
 			colLoc.className = "col-md-4";
 			row.appendChild(colLoc);
 
+			// Title (name) of script
 			var title = document.createElement("h1");
 			title.className = "display-5 pb-3";
 			title.textContent = thisScript.label;
 			colMain.appendChild(title);
 
+			// Example phrase div
 			var examplePhraseContainer = document.createElement("div");
 			examplePhraseContainer.className = "container bg-light text-dark p-2 my-3"
 			colMain.appendChild(examplePhraseContainer);
@@ -127,6 +132,7 @@
 			examplePhrase.textContent = thisScript.example_text;
 			examplePhraseContainer.appendChild(examplePhrase);
 
+			// Script description and tip
 			var description = document.createElement("p");
 			description.textContent = thisScript.description;
 			colMain.appendChild(description);
@@ -136,6 +142,35 @@
 			bold.appendChild(tip);
 			colMain.appendChild(bold);
 
+			// Script confusables table
+			if (thisScript.confusables && thisScript.confusables.length > 0) {
+				var confusablesTable = document.createElement("table");
+				confusablesTable.className = "table table-hover";
+				confusablesTable.innerHTML = "<thead><tr><th>Confusable With</th><th>Confusability</th><tr/></thead>";
+				var confusablesTableBody = document.createElement("tbody");
+
+				for (var currentConfusable of thisScript.confusables) {
+					var confusablesTableEntry = document.createElement("tr");
+					confusablesTableEntry.clickDestination = currentConfusable[0];
+					confusablesTableEntry.onclick = function() {
+						window.location.hash = "#" + this.clickDestination;
+					}
+
+					var confusablesTableEntryScript = document.createElement("td");
+					confusablesTableEntryScript.textContent = allScripts[currentConfusable[0]].label;
+					confusablesTableEntry.appendChild(confusablesTableEntryScript);
+
+					var confusablesTableEntryScore = document.createElement("td");
+					confusablesTableEntryScore.textContent = confusabilities[currentConfusable[1]];
+					confusablesTableEntry.appendChild(confusablesTableEntryScore);
+
+					confusablesTableBody.appendChild(confusablesTableEntry);
+				}
+				confusablesTable.appendChild(confusablesTableBody);
+				colMain.appendChild(confusablesTable);
+			}
+
+			// Script map
 			var map = initNewScriptMap(currentScript, function() {filterScriptsByCountry(this.id)});
 			map.id = "script-card-" + currentScript + "-map";
 			map.scriptDestination = currentScript;
