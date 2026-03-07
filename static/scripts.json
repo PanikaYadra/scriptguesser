@@ -50,9 +50,9 @@
     "keywords": ["cyrillic", "mongolian", "mongol", "mongolian cyrillic"],
     "countries": ["MN"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "Эцсийн дүндээ танд нуух зүйл байхгүй учраас хувийн нууцыг хамгаалах эрхийг үл тоомсорлож байна гэж маргах нь танд хэлэх зүйлгүй учраас үг хэлэх эрх чөлөөг үл тоомсорлож байгаагаас ялгаагүй юм.",
+    "description": "Before the introduction of the cyrillic script for the Mongolian language in the 1940s, Mongolian used a script called the Hudum Mongol bichig and is still in use in parts of Mongolia and China today. Mongolian cyrillic is identical to Russian cyrillic with the addition of two characters.",
+    "tip": "Mongolian will look very similar to Russian and other cyrillic scripts. Unlike Russian, the letters 'Ө' and 'Ү' are present in Mongolian, however, they are also present in Turkic scripts like Kazakh and Kyrgyz. Mongolian often features double vowels like 'ээ', 'аа' or 'өө', which are rather rare in Russian, but also common in Turkic languages."
   },
   "cyrillic_russian": {
     "id": "cyrillic_russian",
@@ -61,9 +61,9 @@
     "keywords": ["cyrillic", "russian", "russian cyrillic"],
     "countries": ["RU"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "В конечном счете, утверждать, что вам безразлично право на неприкосновенность частной жизни, потому что вам нечего скрывать, ничем не отличается от утверждения, что вам безразлична свобода слова, потому что вам нечего сказать.",
+    "description": "The Russian script is a cyrillic script consisting of 33 letters. Cyrillic is a successor of the Greek script and is used to write many Slavic, Turkic, Uralic and other languges.",
+    "tip": "Cyrillic looks similar to both Greek and Latin and you might recognize letters similar or identical to both scripts. Cyrillic looks kind of \"harsh\" with sharp edges and many straight lines. Keep in mind, that Russian is by far not the only cyrillic script and there exist many variations of it."
   },
   "cyrillic_ukrainian": {
     "id": "cyrillic_ukrainian",
@@ -72,9 +72,9 @@
     "keywords": ["cyrillic", "ukrainian", "ukrainian cyrillic"],
     "countries": ["UA"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "Зрештою, стверджувати, що вам байдуже право на приватність, бо вам нема чого приховувати, нічим не відрізняється від того, що ви кажете, що вам байдуже свобода слова, бо вам нема чого сказати.",
+    "description": "The Ukrainian script is a cyrillic script and is closely related to other cyrillic scripts like Russian, Belarusian and Bulgarian. While most letters in the Ukrainian alphabet appear in most cyrillic scripts as well, there are some exceptions as shown below.",
+    "tip": "Ukrainian cyrillic looks similar to Russian cyrillic and other cyrillic scripts, however the letters 'Ґ', 'Є' and 'І' do not appear in Russian (yet there are similar looking letters in Russian like 'Г' and 'Э'), but are present in other cyrillic scripts. The letter 'Ї', on the other hand, is more or less unique to Ukrainian within the today relevant cyrillic scripts."
   },
   "devanagari_hindi": {
     "id": "devanagari_hindi",
@@ -128,8 +128,8 @@
     "countries": ["IN"],
     "regions": [],
     "example_text": "આ એક શૂન્ય-સમ રમત છે. બધા પરિણામોની ગણતરી કરો. તમે એક રમત રમી રહ્યા છો જે તમે પહેલાથી જ હારી ગયા છો.",
-    "description": "The Gujarati script is derived of the Devanagari script and one of the official scripts in India.",
-    "tip": "Gujarati looks somewhat similar to Hindi, but lacks the horizontal lime going through most letters in Hindi."
+    "description": "The Gujarati script is derived of the Devanagari script and one of the official scripts in India. Interestingly, the Gujarati script is closely related to the Devanagari script despite lacking the characteristic horizontal line of Devanagari.",
+    "tip": "Gujarati looks somewhat similar to Devanagari (Hindi), but lacks the horizontal lime going through most letters in Hindi."
   },
   "gurmukhi_punjabi": {
     "id": "gurmukhi_punjabi",
@@ -201,12 +201,12 @@
     "id": "kannada",
     "code": "kn",
     "label": "Kannada",
-    "keywords": ["kannada", "kannadan", "canarese"],
+    "keywords": ["kannada", "kannadan", "canarese", "kanarese"],
     "countries": ["IN"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "ವೀಕ್ಷಣೆಯ ಅಡಿಯಲ್ಲಿ, ನಾವು ಕಡಿಮೆ ಸ್ವತಂತ್ರವಾಗಿ ವರ್ತಿಸುತ್ತೇವೆ, ಅಂದರೆ ನಾವು ಪರಿಣಾಮಕಾರಿಯಾಗಿ ಕಡಿಮೆ ಸ್ವತಂತ್ರರಾಗಿದ್ದೇವೆ.",
+    "description": "The Kannada script is an Indic script which is primarily used to write the Kannada language. The Kannada and Telugu scripts are so highly mutually intelligible, that they are often considered regional variants of a single script.",
+    "tip": "Kannada is a very round and smooth script with a lot of curves and small circles. It looks very similar to Telugu, but features a long hook at the top of many characters, which looks like the half of a rounded arrow or a horizontal walking stick (for example here: 'ದು')."
   },
   "khmer": {
     "id": "khmer",
@@ -215,20 +215,20 @@
     "keywords": ["khmer", "cambodian"],
     "countries": ["KH"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "ទីបំផុត ការប្រកែកថាអ្នកមិនខ្វល់ពីសិទ្ធិឯកជនភាព ព្រោះអ្នកគ្មានអ្វីត្រូវលាក់ គឺមិនខុសពីការនិយាយថាអ្នកមិនខ្វល់នឹងការនិយាយដោយសេរី ព្រោះអ្នកគ្មានអ្វីត្រូវនិយាយនោះទេ។",
+    "description": "The Khmer script is the script for the Khmer language primarily spoken in Cambodia. Khmer is an Indic script and an ancestor of the Thai script, thus sharing some similarities with Thai.",
+    "tip": "Khmer can look fairly similar to Thai and Lao but tends to look more complex. It has a generally curvy look and lacks the many small circles found in the Thai and Lao scripts."
   },
   "lao": {
     "id": "lao",
     "code": "lo",
     "label": "Lao",
-    "keywords": ["lao", "laotian", "phasa lao"],
+    "keywords": ["lao", "laotian", "phasa lao", "akson lao"],
     "countries": ["LA"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "ໃນທີ່ສຸດ, ການໂຕ້ຖຽງວ່າທ່ານບໍ່ສົນໃຈສິດທິໃນຄວາມເປັນສ່ວນຕົວເພາະວ່າທ່ານບໍ່ມີຫຍັງປິດບັງແມ່ນບໍ່ແຕກຕ່າງຈາກການເວົ້າວ່າທ່ານບໍ່ສົນໃຈກັບຄໍາເວົ້າທີ່ບໍ່ເສຍຄ່າເພາະວ່າທ່ານບໍ່ມີຫຍັງທີ່ຈະເວົ້າ.",
+    "description": "The Lao script was adapted from the Khmer script and is thus an Indic script used to write the Lao language and other languages spoken in Laos. It developed alongside the Thai script, both sharing similarities.",
+    "tip": "Just like Thai, the Lao script is curvy with many small circles in the letters. It tends to have less straight lines and sharp edges than Thai and looks rounder and simpler in general."
   },
   "latin_vietnamese": {
     "id": "latin_vietnamese",
@@ -237,9 +237,9 @@
     "keywords": ["latin", "vietnamese", "quoc ngu"],
     "countries": ["VN"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "Tóm lại, việc cho rằng bạn không quan tâm đến quyền riêng tư vì bạn không có gì để che giấu cũng chẳng khác gì việc nói rằng bạn không quan tâm đến quyền tự do ngôn luận vì bạn không có gì để nói.",
+    "description": "The Vietnamese script is based on the Latin alphabet with a lot of diacritics. Prior to the Latin alphabet, Vietnamese used a script adapted from Chinese characters, until Portuguese and Italian Jesuit missionaries began using the Latin script as early as 1620 to transribe the Vietnamese language.",
+    "tip": "The Vietnamese script uses the Latin script as base and thus consists mainly of Latin letters. However, Vietnamese makes heavy use of diacritics and uses new letters like 'Đ', making it somewhat recognizable. Vietnamese also has very short words often consisting of only one syllable."
   },
   "malayalam": {
     "id": "malayalam",
@@ -248,9 +248,9 @@
     "keywords": ["malayalam"],
     "countries": ["IN"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "നിരീക്ഷണത്തിൽ, നമ്മൾ കുറച്ച് സ്വതന്ത്രമായി പ്രവർത്തിക്കുന്നു, അതായത് ഫലപ്രദമായി നമുക്ക് കുറച്ച് സ്വതന്ത്രത മാത്രമേ ഉണ്ടാകൂ.",
+    "description": "The Malayalam script is primarily used in Kerala, India for the Malayalam language. It is closely related with the Telugu script.",
+    "tip": "Almost every character in the Malayalam script looks round at the top and many letters generally resemble upside-down U-shapes. While looking somewhat similar to Tamil or Telugu, Malayalam does not feature many straight lines and 90° angles like Tamil and lacks diacritics like Telugu has."
   },
   "meitei_mayek": {
     "id": "meitei_mayek",
@@ -259,9 +259,9 @@
     "keywords": ["meitei", "manipuri", "meithei", "meetei", "meitei mayek"],
     "countries": ["IN"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "ꯑꯔꯣꯏꯕꯗꯥ, ꯅꯍꯥꯛꯅꯥ ꯂꯣꯠꯄꯥ ꯌꯥꯕꯥ ꯄꯣꯠꯁꯛ ꯑꯃꯠꯇꯥ ꯂꯩꯇꯕꯅꯥ ꯃꯔꯝ ꯑꯣꯏꯗꯨꯅꯥ ꯅꯍꯥꯛꯅꯥ ꯄ꯭ꯔꯥꯏꯚꯦꯁꯤꯒꯤ ꯍꯛ ꯑꯗꯨꯒꯤ ꯃꯇꯥꯡꯗꯥ ꯋꯥꯈꯜ ꯇꯥꯗꯦ ꯍꯥꯌꯅꯥ ꯂꯧꯕꯥ ꯍꯥꯌꯕꯁꯤ ꯅꯍꯥꯛꯅꯥ ꯍꯥꯌꯕꯥ ꯌꯥꯕꯥ ꯋꯥꯐꯝ ꯑꯃꯠꯇꯥ ꯂꯩꯇꯕꯅꯥ ꯃꯔꯝ ꯑꯣꯏꯗꯨꯅꯥ ꯐ꯭ꯔꯤ ꯁ꯭ꯄꯤꯆꯀꯤ ꯃꯇꯥꯡꯗꯥ ꯋꯥꯈꯜ ꯇꯥꯗꯦ ꯍꯥꯌꯕꯁꯤꯒꯥ ꯈꯦꯠꯅꯕꯥ ꯂꯩꯇꯦ꯫",
+    "description": "The Meitei script, often called Manipuri, is primarily used in Manipur and Assam in India. It was used until the 18th century, then replaced by Bengali, before it was 'revived' in the 20th century. Since 2021, the Government of Manipur uses the Meitei script alongside the Bengali-Assamese script again.",
+    "tip": "The Meitei script can be recognized by the many straight vertical and horizontal lines and 90° angles. Many letters look like grids or bars, while others feature wide curves. Many letters have a long stroke above them which looks like an elongated grave accent ('`')."
   },
   "odia": {
     "id": "odia",
@@ -270,9 +270,9 @@
     "keywords": ["odia", "oriya", "odian", "odishan", "orissan"],
     "countries": ["IN"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "ଶେଷରେ, ତୁମର ଲୁଚାଇବା ପାଇଁ କିଛି ନାହିଁ ବୋଲି ତୁମେ ଗୋପନୀୟତାର ଅଧିକାର ବିଷୟରେ ଚିନ୍ତା କରୁନାହଁ ବୋଲି ଯୁକ୍ତି କରିବା, ତୁମର କହିବା ପାଇଁ କିଛି ନାହିଁ ବୋଲି ତୁମେ ବାକ୍ ସ୍ୱାଧୀନତା ବିଷୟରେ ଚିନ୍ତା କରୁନାହଁ ବୋଲି କହିବାଠାରୁ ଭିନ୍ନ ନୁହେଁ।",
+    "description": "The Odia or somtimes Oriya script is a Brahmic script mainly used in Odisha, India and partially in neighbouring states, having developed for over 1000 years. Contrary to intuition, Odia is closer related to Bengali and Devanagari than to scripts like Telugu or Kannada, even though the round appearance might suggest otherwise. The round bow over most Odia letters actually stems from the characteristic line above Bengali and Devanagari letters.",
+    "tip": "The Odia script has a very distinct look, featuring rounded characters with a semi-circle at the top. They loosely resemble the skull emoji ('💀') making it easy to remember. Some characters will also display a diacritic in the form of a wide curve above the letter."
   },
   "sinhala": {
     "id": "sinhala",
@@ -281,9 +281,9 @@
     "keywords": ["sinhala", "simhala", "sinhalese"],
     "countries": ["LK"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "නිරීක්ෂණය යටතේ, අපි අඩු නිදහසකින් ක්‍රියා කරමු, එයින් අදහස් කරන්නේ අපි ඵලදායී ලෙස අඩු නිදහසකින් ක්‍රියා කරන බවයි.",
+    "description": "The Sinhala script is believed to be derived from the Grantha script, thus making it an Indic language.",
+    "tip": "Like other Brahmic scripts, Sinhalese characters look very round. It includes many spirals and looks somewhat similar to Telugu or Kannada but without the diacritics above many characters. The famous letter 'ඞ' which looks like a character from the game 'Among Us' stems from the Sinhala script."
   },
   "tamil": {
     "id": "tamil",
@@ -292,9 +292,9 @@
     "keywords": ["tamil", "thamizh"],
     "countries": ["IN", "LK"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "கண்காணிப்பின் கீழ், நாம் குறைவாக சுதந்திரமாக செயல்படுகிறோம், அதாவது நாம் திறம்பட குறைவாக சுதந்திரமாக இருக்கிறோம்.",
+    "description": "The Tamil script is used in India and Sri Lanka, as well as in Singapore and Malaysia to a lesser degree to write the Tamil language and other minority languages. While in theory related to Khmer, the two systems look noticeably different.",
+    "tip": "Tamil is easy to recognize as it combines soft curves and straight lines with hard 90° angles. Tamil can also be recognized by the diacritics in form of singular dots centered above some characters."
   },
   "telugu": {
     "id": "telugu",
@@ -303,19 +303,19 @@
     "keywords": ["telugu"],
     "countries": ["IN"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "పరిశీలనలో ఉన్నప్పుడు, మనం తక్కువ స్వేచ్ఛగా ప్రవర్తిస్తాము, అంటే మనం సమర్థవంతంగా తక్కువ స్వేచ్ఛగా ఉంటాము.",
+    "description": "The Telugu script is an Indic script spoken primarily in the Indian states of Andhra Pradesh and Telangana. It has extensive similarities with the Kannada script, causing both scripts to often be considered regional variants of the same script.",
+    "tip": "The Telugu script looks very similar to the Kannada script, featuring very round and smooth letters with small circles as well. In contrast to Kannada, however, Telugu has many diacritics in the shape of small checkmarks above many letters."
   },
   "thai": {
     "id": "thai",
     "code": "th",
     "label": "Thai",
-    "keywords": ["thai", "siamese"],
+    "keywords": ["thai"],
     "countries": ["TH"],
     "regions": [],
-    "example_text": "",
-    "description": "",
-    "tip": ""
+    "example_text": "ท้ายที่สุดแล้ว การอ้างว่าคุณไม่สนใจสิทธิในความเป็นส่วนตัวเพราะคุณไม่มีอะไรต้องปกปิด ก็ไม่ต่างอะไรกับการอ้างว่าคุณไม่สนใจเสรีภาพในการพูดเพราะคุณไม่มีอะไรจะพูด",
+    "description": "The Thai script is used to write Thai and is derived from the Old Khmer script, making Thai an Indic writing system. Like the closely related Lao script, Thai does not use spaces.",
+    "tip": "Thai can be recognized by the many small circles in most characters. Compared to Lao, there are more straight lines and sharp edges in Thai. It also looks simpler than Khmer."
   }
 }
