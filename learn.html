@@ -36,8 +36,28 @@
 
 		<div class="py-3"></div>
 
+		<div class="modal fade" id="script-comparison-modal">
+		  <div class="modal-dialog modal-xl">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h4 class="modal-title">Script Comparison</h4>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+		      </div>
+		
+		      <div id="script-comparison-modal-body" class="modal-body">
+		        Loading scripts...
+		      </div>
+		
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+		      </div>
+		
+		    </div>
+		  </div>
+		</div>
+
 		<div class="row text-center align-items-center flex-grow-1 pt-5">
-			<div class="col-2">
+			<div class="col-md-2">
 				<select selected="TITLE" id="country-list" class="form-select text-center" style="overflow-y: scroll; max-height: 300px;" data-live-search="true" data-live-search-style="startsWith" onchange="filterScriptsByCountry(this.value)">
 					<option value="TITLE" disabled>Filter by country</option>
 					<option value="ALL">Show All</option>
@@ -151,10 +171,23 @@
 
 				for (var currentConfusable of thisScript.confusables) {
 					var confusablesTableEntry = document.createElement("tr");
+
 					confusablesTableEntry.clickDestination = currentConfusable[0];
+					confusablesTableEntry.compareScriptOne = thisScript.id;
+					confusablesTableEntry.compareScriptTwo = currentConfusable[0];
+
 					confusablesTableEntry.onclick = function() {
-						window.location.hash = "#" + this.clickDestination;
+						$("#script-comparison-modal-body")[0].innerHTML = "Loading scripts...";
+						compareScripts([this.compareScriptOne, this.compareScriptTwo], $("#script-comparison-modal-body")[0]);
 					}
+
+					//confusablesTableEntry.ondblclick = function() {
+					//	filterScriptsByCountry();
+					//	window.location.hash = "#" + this.clickDestination;
+					//}
+
+					confusablesTableEntry.setAttribute("data-bs-toggle", "modal");
+					confusablesTableEntry.setAttribute("data-bs-target", "#script-comparison-modal");
 
 					var confusablesTableEntryScript = document.createElement("td");
 					confusablesTableEntryScript.textContent = allScripts[currentConfusable[0]].label;

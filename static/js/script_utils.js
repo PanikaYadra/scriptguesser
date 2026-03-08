@@ -59,6 +59,14 @@ request.onload = function() {
 }
 request.send(null);
 
+function createHTMLElement(type, className = "", innerHTML = "") {
+	var element = document.createElement(type);
+	element.innerHTML = innerHTML;
+	element.className = className;
+
+	return element;
+}
+
 function translateSentence(destScript, sentence) {
 	var destLang = destScript;
 	var data = "";
@@ -94,7 +102,7 @@ function mapHighlightCountries(svg, countryCodes, clearPriorHighlights = true) {
 	}
 }
 
-function mapZoomToCountries(svg, countryCodes) {
+function mapZoomToCountries(svg, countryCodes, padding = 50) {
   let minX = Infinity, minY = Infinity;
   let maxX = -Infinity, maxY = -Infinity;
 
@@ -110,8 +118,6 @@ function mapZoomToCountries(svg, countryCodes) {
     maxY = Math.max(maxY, bbox.y + bbox.height);
   });
 
-  const padding = 20;
-
   const width = maxX - minX;
   const height = maxY - minY;
 
@@ -119,9 +125,11 @@ function mapZoomToCountries(svg, countryCodes) {
     "viewBox",
     `${minX - padding} ${minY - padding} ${width + padding * 2} ${height + padding * 2}`
   );
+
+  svg.padding = padding;
 }
 
-function initNewMap(clickFunction = function() {}) {
+function initNewMap(clickFunction = function() {}, isZoomable = true) {
 	var map = document.createElement("div");
 	map.innerHTML = mapSVGText;
 	map.classList.add("map");
@@ -138,6 +146,31 @@ function initNewMap(clickFunction = function() {}) {
 		path.onclick = clickFunction;
 	}
 
+	if (isZoomable) {
+		map.querySelector("svg").onwheel = function(e) {
+			const step = 15;
+			const minPadding = 0;
+			const maxPadding = 1000;
+	
+			var oldPadding = this.padding;
+			var newPadding = 0;
+			var oldViewBox = this.viewBox.baseVal;
+	
+			e.preventDefault();
+	
+			if (e.deltaY > 0 || e.deltaX < 0) {
+				// Zoom out
+				newPadding = Math.min(maxPadding, oldPadding + step);
+			} else if (e.deltaY < 0 || e.deltaX > 0) {
+				// Zoom in
+				newPadding = Math.max(minPadding, oldPadding - step);
+			}
+	
+			this.setAttribute("viewBox", `${oldViewBox.x + oldPadding - newPadding} ${oldViewBox.y + oldPadding - newPadding} ${oldViewBox.width - oldPadding * 2 + newPadding * 2} ${oldViewBox.height - oldPadding * 2 + newPadding * 2}`);
+			this.padding = newPadding;
+		}
+	}
+
 	return map;
 }
 
@@ -147,4 +180,43 @@ function initNewScriptMap(scriptId, clickFunction = function() {}) {
 	mapHighlightCountries(map.querySelector("svg"), allScripts[scriptId].countries);
 
 	return map;
+}
+
+function compareScripts(scripts, targetNode = null) {
+	for (var currentScript of scripts) {
+		if (!allScripts[currentScript]) {
+			console.error(`Invalid script '${currentScript}'.`);
+			return;
+		}
+	}
+
+	var row = document.createElement("div");
+	row.className = "row text-center";
+
+	for (var currentScript of scripts) {
+		var thisScript = allScripts[currentScript];
+
+		var colScript = document.createElement("div");
+		colScript.className = "col";
+
+		var lblScriptTitle = document.createElement("h3");
+		lblScriptTitle.className = "";
+		lblScriptTitle.textContent = thisScript.label;
+		colScript.appendChild(lblScriptTitle);
+
+		var containerScript = document.createElement("div");
+		containerScript.className = "container bg-dark text-white";
+		containerScript.textContent = thisScript.example_text;
+		colScript.appendChild(containerScript);
+
+		row.appendChild(colScript);
+	}
+
+	if(targetNode) {
+		targetNode.innerHTML = "";
+		targetNode.appendChild(row);
+		return;
+	}
+
+	return row;
 }

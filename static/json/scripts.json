@@ -183,7 +183,7 @@
     "regions": [],
     "example_text": "આ એક શૂન્ય-સમ રમત છે. બધા પરિણામોની ગણતરી કરો. તમે એક રમત રમી રહ્યા છો જે તમે પહેલાથી જ હારી ગયા છો.",
     "description": "The Gujarati script is derived of the Devanagari script and one of the official scripts in India. Interestingly, the Gujarati script is closely related to the Devanagari script despite lacking the characteristic horizontal line of Devanagari.",
-    "tip": "Gujarati looks somewhat similar to Devanagari (Hindi), but lacks the horizontal lime going through most letters in Hindi.",
+    "tip": "Gujarati looks somewhat similar to Devanagari (Hindi), but lacks the horizontal line going through most letters in Hindi.",
     "confusables": [
       ["devanagari_hindi", 1]
     ]
