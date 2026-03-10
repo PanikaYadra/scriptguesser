@@ -17,6 +17,7 @@ const confusabilities = [
 
 var allScripts = [];
 var wordlist = [];
+var allPresets = [];
 var countriesIso2 = {};
 var scriptsByCountry = {};
 
@@ -37,6 +38,10 @@ $.getJSON(jsonFolder + "countries_iso2.json", function(json) {
 
 $.getJSON(jsonFolder + "wordlist.json", function(json) {
 	wordlist = json;
+});
+
+$.getJSON(jsonFolder + "presets.json", function(json) {
+	allPresets = json;
 });
 
 // Populate arrays/objects
