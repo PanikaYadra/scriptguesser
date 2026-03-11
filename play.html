@@ -33,6 +33,28 @@
 				</ul>
 			</div>
 		</nav>
+
+		<!-- Script comparison popup -->
+		<div class="modal fade" id="script-comparison-modal">
+		  <div class="modal-dialog modal-xl">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h4 class="modal-title">Script Comparison</h4>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+		      </div>
+		
+		      <div id="script-comparison-modal-body" class="modal-body">
+		        Loading scripts...
+		      </div>
+		
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+		      </div>
+		
+		    </div>
+		  </div>
+		</div>
+
 		<div class="row">
 			<div class="container-fluid p-5 my-4 bg-light text-black text-center text-break" style="height: 180px; display: flex; overflow: hidden;">
 				<h1 id="script-lbl" class="text-center">Placeholder</h1>
@@ -54,6 +76,8 @@
 				<div id="control-bar" class="mb-3 input-group-lg align-items-center justify-content-center text-center" hidden>
 					<a id="learn-more-button" class="btn btn-secondary text-white" type="submit" href="learn.html" target="_blank">Learn More</a>
 					<button id="next-round-button" class="btn btn-primary text-white" type="submit" onclick="nextRound()">Next Round</button>
+					<br>
+					<button id="compare-scripts-button" class="btn btn-primary text-white my-2" data-bs-toggle="modal" data-bs-target="#script-comparison-modal" type="submit" onclick="compareScripts([game.rounds[game.currentRound].script, game.rounds[game.currentRound].userDetectedScript], $('#script-comparison-modal-body')[0])">Compare with my guess</button>
 				</div>
 			</div>
 		</div>
@@ -306,6 +330,7 @@
 			clearGuessText();
 			hideScriptInfo();
 			setScriptLabel(game.rounds[round].sentence);
+			$("#compare-scripts-button")[0].hidden = true;
 			setControlBarVisibility(false);
 			setGuessBarVisibility(true);
 			guessText.focus();
@@ -320,7 +345,8 @@
 				"script": "",
 				"sentence": "",
 				"isCorrect": false,
-				"userInput": ""
+				"userInput": "",
+				"userDetectedScript": ""
 			}
 
 			newRound.script = getRandomEnabledScript();
@@ -382,6 +408,15 @@
 			$("#control-bar")[0].hidden = !isVisible;
 		}
 
+		function detectScriptByKeyword(keyword) {
+			for (var currentScript in allScripts) {
+				if (allScripts[currentScript].keywords.includes(keyword.toLowerCase().trim())) {
+					return currentScript;
+				}
+			}
+			return "";
+		}
+
 		function sendUserGuess(userGuess) {
 			game.rounds[game.currentRound].userInput = userGuess;
 			var correctScript = game.rounds[game.currentRound].script;
@@ -391,6 +426,12 @@
 				game.rounds[game.currentRound].isCorrect = true;
 			} else {
 				setStatus("danger", "False!", `The script was <strong>${allScripts[correctScript].label}</strong>.`);
+
+				game.rounds[game.currentRound].userDetectedScript = detectScriptByKeyword(game.rounds[game.currentRound].userInput);
+
+				if (game.rounds[game.currentRound].userDetectedScript) {
+					$("#compare-scripts-button")[0].hidden = false;
+				}
 			}
 
 			endRound();
