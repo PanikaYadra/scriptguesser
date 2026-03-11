@@ -214,7 +214,7 @@
 			mapZoomToCountries(map.querySelector("svg"), thisScript.countries);
 		}
 
-		for (var i in scriptsByCountry) {
+		for (var i of orderedScriptsByCountryIsos) {
 			var option = document.createElement("option");
 			option.value = i;
 			option.innerHTML = countriesIso2[i];

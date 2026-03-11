@@ -17,9 +17,10 @@ const confusabilities = [
 
 var allScripts = [];
 var wordlist = [];
-var allPresets = [];
+var allPresets = {};
 var countriesIso2 = {};
 var scriptsByCountry = {};
+var orderedScriptsByCountryIsos = [];
 
 var mapSVGText = "";
 
@@ -45,17 +46,25 @@ $.getJSON(jsonFolder + "presets.json", function(json) {
 });
 
 // Populate arrays/objects
-	for (var currentScript in allScripts) {
-		for (var currentCountry in allScripts[currentScript].countries) {
-			var countryCode = allScripts[currentScript].countries[currentCountry];
+for (var currentScript in allScripts) {
+	for (var currentCountry in allScripts[currentScript].countries) {
+		var countryCode = allScripts[currentScript].countries[currentCountry];
 
-			if (countryCode in scriptsByCountry) {
-				scriptsByCountry[countryCode].push(allScripts[currentScript]["id"]);
-			} else {
-				scriptsByCountry[countryCode] = [ allScripts[currentScript]["id"] ];
-			}
+		if (countryCode in scriptsByCountry) {
+			scriptsByCountry[countryCode].push(allScripts[currentScript]["id"]);
+		} else {
+			scriptsByCountry[countryCode] = [ allScripts[currentScript]["id"] ];
 		}
 	}
+}
+
+// Sort scripts by country array
+orderedScriptsByCountryIsos = Object.keys(scriptsByCountry);
+orderedScriptsByCountryIsos.sort(function (a, b) {
+	if (countriesIso2[a] > countriesIso2[b]) return 1;
+	if (countriesIso2[a] < countriesIso2[b]) return -1;
+	return 0;
+});
 
 var request = new XMLHttpRequest();
 request.open("GET", "static/world.svg", false);
