@@ -13,3 +13,21 @@ g.highlighted {
 g:hover {
   fill: #c4c4c4;
 }
+
+.navbar .dropdown-menu {
+  position: absolute;
+  right: 0;
+  left: auto;
+}
+
+.documentation-users {
+  color: #0781b5;
+}
+
+.documentation-modders {
+  color: #8a0020;
+}
+
+.documentation-developers {
+  color: #bd0065;
+}

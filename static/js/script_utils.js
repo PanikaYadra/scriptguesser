@@ -1,7 +1,8 @@
 const googleTranslateBaseUrl = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&dt=t&dt=bd&dj=1";
 
-const staticFolder = "static/";
-const jsonFolder = staticFolder + "json/";
+const BASE_PATH = location.hostname.endsWith("github.io") ? "scriptguesser/" : "/";
+const FOLDER_STATIC = BASE_PATH + "static/";
+const FOLDER_JSON = FOLDER_STATIC + "json/";
 
 const confusabilities = [
 	"Not Confusable",
@@ -29,21 +30,26 @@ $.ajaxSetup({
    	async: false
 });
 
-$.getJSON(jsonFolder + "scripts.json", function(json) {
+$.getJSON(FOLDER_JSON + "scripts.json", function(json) {
 	allScripts = json;
 });
 
-$.getJSON(jsonFolder + "countries_iso2.json", function(json) {
+$.getJSON(FOLDER_JSON + "countries_iso2.json", function(json) {
 	countriesIso2 = json;
 });
 
-$.getJSON(jsonFolder + "wordlist.json", function(json) {
+$.getJSON(FOLDER_JSON + "wordlist.json", function(json) {
 	wordlist = json;
 });
 
-$.getJSON(jsonFolder + "presets.json", function(json) {
+$.getJSON(FOLDER_JSON + "presets.json", function(json) {
 	allPresets = json;
 });
+
+// Prepare relative paths
+function asset(path) {
+
+}
 
 // Populate arrays/objects
 for (var currentScript in allScripts) {
@@ -67,7 +73,7 @@ orderedScriptsByCountryIsos.sort(function (a, b) {
 });
 
 var request = new XMLHttpRequest();
-request.open("GET", "static/world.svg", false);
+request.open("GET", FOLDER_STATIC + "world.svg", false);
 request.onload = function() {
 	mapSVGText = request.responseText;
 }
@@ -233,4 +239,19 @@ function compareScripts(scripts, targetNode = null) {
 	}
 
 	return row;
+}
+
+function scrollToHash(parentElement = document) {
+	var target = parentElement.querySelector(window.location.hash);
+
+	if (!target) {
+		return;
+	}
+
+  var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - $(".navbar")[0].offsetHeight;
+
+  window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+  });
 }

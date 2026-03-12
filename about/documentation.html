@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="	sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+
+	<title>ScriptGuesser – About</title>
+</head>
+<body>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+	<script src="../static/js/script_utils.js"></script>
+
+	<div class="container-fluid bg-dark min-vh-100 min-vw-100 d-flex flex-column text-white">
+		<nav class="navbar bg-primary navbar-dark fixed-top">
+			<div class="container-fluid flex-nowrap">
+				<ul class="navbar-nav flex-row gap-3">
+					<li class="nav-item">
+						<a class="nav-link active" href="../index.html">Main Menu</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../play.html">Play</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../learn.html">Learn</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="qa.html">Q&A</a></li>
+							<li><a class="dropdown-item" href="#">Documentation</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="row align-items-center justify-content-center text-center">
+			<div class="col">
+				<div class="p-3"></div>
+				<h1 class="p-5">About ScriptGuesser – Documentation</h1>
+
+				<div id="documentation-overview" class="card my-2">
+					<div class="card-header text-start">
+						<p>For: <span class="documentation-users">Users</span>, <span class="documentation-modders">Modders</span>, <span class="documentation-developers">Developers</span></p>
+					</div>
+					<div class="card-body">
+						<h4 class="card-title">Documentation – Overview</h4>
+						<p class="card-text">This page will provide Documentation of certain features for different audiences. You can find the target audience of each article here in the header of each card.</p>
+						<p class="card-text">
+							<span class="documentation-users">Users</span> – These articles give a high-level overview of features encountered during casual gameplay. These will help you make the most of this website.
+							<br>
+							<span class="documentation-modders">Modders</span> – These articles offer high-level documentation for features which can be modded by modifying the JSON files on this site. If you want to learn how to add scripts or change other high-level functionality of this site by forking or cloning the GitHub repository, these articles are for you.
+							<br>
+							<span class="documentation-developers">Developers</span> – These articles offer low-level documentation for JavaScript source code and functions used on this site. If you want to modify core functionality of this site by forking or cloning the GitHub repository, these articles are for you. Since these articles will likely take the most time to write, I will add them from time to time when I am free.
+						</p>
+					</div>
+				</div>
+
+				<div id="confusability-levels" class="card my-2">
+					<div class="card-header text-start">
+						<p>For: <span class="documentation-users">Users</span>, <span class="documentation-modders">Modders</span></p>
+					</div>
+					<div class="card-body">
+						<h4 class="card-title">Confusability Levels</h4>
+						<p class="card-text">
+							The confusability level is defined for each script in the scripts.json file. The levels range from 0 to 8 as defined below:
+						</p>
+						<div class="px-4 py-2">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Level</th>
+										<th>Definition</th>
+										<th>Usage</th>
+										<th>Example</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>0</td>
+										<td><i>Not Confusable</i></td>
+										<td>The scripts are usually not confusable, however, they may still occasionally be confused by someone not aware of either of the scripts or due to lack of attention. This level may be used in the future, but is not in use currently as scripts which are not confusable are just left out.</td>
+										<td>The Latin and Japanese scripts are not considered confusable as there are no shared characters or even significant similarities.</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td><i>Very Low</i></td>
+										<td>There may be some confusability between the two scripts like some similar or identical characters, but the scripts are generally still very easy to differentiate even by someone who does not know about the details of the scripts as long as they are aware of their existences.</td>
+										<td>The Latin and Greek scripts are considered confusable to a <i>Very Low</i> degree as there are some shared or similar characters like a/α or B/Β, but the scripts as a whole do not look very similar and are easily recognizable side-by-side.</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td><i>Low</i></td>
+										<td>The scripts have a similar look, share a moderate amount of characters or have a shared defining feature (such as the horizontal line in many Devanagari scripts) which can create confusion when learning the scripts. When compared side-by-side, the scripts are easy to differentiate without needing to look for details.</td>
+										<td>The Hindi and Gujarati scripts are considered confusable to a <i>Low</i> degree as the general appearance of the characters look similar in shape, but Gujarati lacks the obvious horzontal line characteristic for Hindi making recognition easy despite similar shapes.</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td><i>Moderate</i></td>
+										<td>The scripts share a defining feature or are very similar in shape or general look. When compared side-by-side, the scripts may be difficult to differentiate for someone who is not aware of specific details of the scripts. However, there exists at least one defining detail which appears in most characters and can be found in almost all texts of decent size which enables a knowing reader to reliably differentiate the scripts.</td>
+										<td>The Telugu and Kannada scripts are considered confusable to a <i>Moderate</i> degree as their charactes look very similar and their defining feature is less obvious. They can, however, be reliably differentiated by the checkmark-like diacritics in Telugu or the hook-like diacritics in Kannada if the reader knows what to look out for.</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td><i>High</i></td>
+										<td>The scripts share a large amount of identical or nearly identical characters, rendering a reader unaware of specific things to look out for almost incapable of reliably differentiating the scripts. There are still about 2-5 script-specific characters which appear in most sentences by which the two scripts can be recognized. While some (especially very short) sentences may not include any recognizable characters making them almost unintelligible, this is generally not the norm.</td>
+										<td>The Russian and Ukrainian Cyrillic scripts share the majority of all letters, however, the Ukrainian letters Ґ, Є, І and Ї do not appear in the Russian script and are commonly found in almost all sentences, making a reader aware of this fact able to reliably differentiate the scripts as long as they pay attention.</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td><i>Very High</i></td>
+										<td>Most characters are shared among both scripts. There are only about one or two unambigious characters which appear at a decent rate and thus appear in many (but not necessarily all) sentences. Certain character combinations such as two times the same latter in a row may be a crucial way of differentiating the both scripts. The scripts are generally not reliably differentiable for a read unaware of the specific details.</td>
+										<td>The Bengali and Assamese scripts are considered confusable to a <i>Very High</i> extent as the only characters present in Assamese but not Bengali are ৰ and ৱ, which also have similar looking counterparts in Bengali. These characters, especially ৰ, still appear often, allowing reliable recognition.</td>
+									</tr>
+									<tr>
+										<td>6</td>
+										<td><i>Extremely High</i></td>
+										<td>As with the <i>Very High</i> level, there are only about one or two unambigious characters, the difference being, that those characters appear rarely even in texts of moderate size. Alternatively, certain character combinations may be the only reliable way to differentiate both scripts. While being able to read the script can lower the confusability by a lot, it is not the only way to differentiate them reliably.</td>
+										<td>The Hindi and Marathi Devanagari scripts are considered confusable to a <i>Extremely High</i> extent as the scripts are identical to the most part except for the character ळ which can sometimes be found in Marathi, but is kind of rare and very similar to क which also appears in Hindi, making reliable recognition very difficult as the text gets shorter.</td>
+									</tr>
+									<tr>
+										<td>7</td>
+										<td><i>Unintelligible Unless Spoken</i></td>
+										<td>The scripts are generally considered unintelligible unless the reader is able to read one (or likely both) of the scripts and can reliably recognize the language that uses it either by certain words, word combinations or general sound. The way of differntiating the scripts is less about the scripts and more about the languages behind it by now.</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>8</td>
+										<td><i>Unintelligible</i></td>
+										<td>The scripts are generally considered unintelligible. At this point, we should probably think about whether there is even valid reason to not consider the scripts the same one. As with level 0, there is no use for this level at this point, but there may be some purpose in the future.</td>
+										<td>There are no scripts considered <i>Unintelligible</i> by me on this site for now and there are not even examples outside of this site I can think of.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		addEventListener("hashchange", (e) => {
+			scrollToHash();
+		});
+	</script>
+</body>
+</html>
