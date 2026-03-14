@@ -55,7 +55,7 @@
     "countries": ["BG"],
     "regions": [],
     "example_text": "В крайна сметка, да твърдиш, че не те е грижа за правото на личен живот, защото нямаш какво да криеш, не е по-различно от това да кажеш, че не те е грижа за свободата на словото, защото нямаш какво да кажеш.",
-    "description": "The Bulgarian script is a Cyrillic script which was introduced to the Bulgarian language during the 9th to 10th century. Due to Bulgaria joining the EU in 2007, it made Cyrillic become the third official script in the EU after Lating and Greek. It is generally very beneficial to know the letters of other Cyrillic scripts to recognize Bulgarian since it lacks any of those additional letters.",
+    "description": "The Bulgarian script is a Cyrillic script which was introduced to the Bulgarian language during the 9th to 10th century. Due to Bulgaria joining the EU in 2007, it made Cyrillic become the third official script in the EU after Latin and Greek. It is generally very beneficial to know the letters of other Cyrillic scripts to recognize Bulgarian since it lacks any of those additional letters.",
     "tip": "Bulgarian Cyrillic is one of the harder Cyrillic scripts to recognize since it lacks additional characters to the Cyrillic script that make it recognizable. The best clue for Bulgarian is, that Bulgarian attaches articles to the end of nouns, so many words in Bulgarian will end in та, то, те or ът, however, this can also be seen in Macedonian. Also, Bulgarian lacks the letters Ё/ё and Ы/ы which appear in Russian.",
     "confusables": [
       ["cyrillic_russian", 5],
@@ -357,8 +357,8 @@
     "description": "The Kannada script is an Indic script which is primarily used to write the Kannada language. The Kannada and Telugu scripts are so highly mutually intelligible, that they are often considered regional variants of a single script.",
     "tip": "Kannada is a very round and smooth script with a lot of curves and small circles. It looks very similar to Telugu, but features a long hook at the top of many characters, which looks like the half of a rounded arrow or a horizontal walking stick (for example here: 'ದು').",
     "confusables": [
-      ["sinhala", 2],
-      ["telugu", 3]
+      ["telugu", 3],
+      ["sinhala", 2]
     ]
   },
   "khmer": {
@@ -387,8 +387,8 @@
     "description": "The Lao script was adapted from the Khmer script and is thus an Indic script used to write the Lao language and other languages spoken in Laos. It developed alongside the Thai script, both sharing similarities.",
     "tip": "Just like Thai, the Lao script is curvy with many small circles in the letters. It tends to have less straight lines and sharp edges than Thai and looks rounder and simpler in general.",
     "confusables": [
-      ["khmer", 3],
-      ["thai", 4]
+      ["thai", 4],
+      ["khmer", 3]
     ]
   },
   "latin": {

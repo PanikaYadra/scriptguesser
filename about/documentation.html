@@ -59,6 +59,91 @@
 					</div>
 				</div>
 
+				<div id="scripts-json" class="card my-2">
+					<div class="card-header text-start">
+						<p>For: <span class="documentation-modders">Modders</span>, <span class="documentation-developers">Developers</span></p>
+					</div>
+					<div class="card-body">
+						<h4 class="card-title">Scripts.json</h4>
+						<p class="card-text">Scripts.json is a JSON file containing all scripts available on the site located at <a href="../static/json/scripts.json">/static/json/scripts.json</a>. If you are looking to add, remove or modify script data, that can be done by editing this file. Being a JSON object, each script and their properties are described as key-value-pairs. The root object of each script has its ID as key. Additionally, each script object has the following properties:</p>
+
+						<div class="px-4 py-2">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Key</th>
+										<th>Value</th>
+										<th>Type</th>
+										<th>Example</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>id</td>
+										<td>The same ID of the script object used as root key. The ID is the name of the script in all lowercase. If the script is a direct variant of another script, the name of the parent script is added as prefix and separated with an underscore.</td>
+										<td>String</td>
+										<td>"lao"<br>"cyrillic_russian"</td>
+									</tr>
+									<tr>
+										<td>code</td>
+										<td>The ISO 639 code of a language that uses the script. This code is used for Google Translate to retrieve a pseudo sentece of the target script.</td>
+										<td>String</td>
+										<td>"lo"</td>
+									</tr>
+									<tr>
+										<td>label</td>
+										<td>The stylized name of the script which will be displayed everywhere the script name appears. If the script is a direct variant of another script, the stylized name of the parent script is used and the name of the child script is added behind in parentheses.</td>
+										<td>String</td>
+										<td>"Lao"<br>"Cyrillic (Russian)"</td>
+									</tr>
+									<tr>
+										<td>keywords</td>
+										<td>A list of keywords in all lowercase by which the script can be found. This is the list the user input is validated against to check if their input is correct or not. These are primarily endo- and exonymes. Keywords should not compensate for user typos.</td>
+										<td>Array[String, ...]</td>
+										<td>["lao", "laotian", "phasa lao", "akson lao"]</td>
+									</tr>
+									<tr>
+										<td>countries</td>
+										<td>A list of ISO 3166-1 alpha-2 (ISO2 in short) codes of countries the script is used in. The script should either be an official script in the country or used by a significant part of the country. Use in small communes or border areas is ignored. For countries for which an official ISO2 code does not exist, an alternative widely used two letter country code should be used like the Kosovo "XK".</td>
+										<td>Array[String, ...]</td>
+										<td>["LA"]</td>
+									</tr>
+									<tr>
+										<td>regions</td>
+										<td>[CURRENTLY NOT IN USE]. A list of subregions of countries where the script is used in. This might be used in the future to increase precision. The format used for those subregions will be specified once they are in use. Right now, this property is just a placeholder whose value should be an empty array.</td>
+										<td>Array[String, ...]</td>
+										<td>[]</td>
+									</tr>
+									<tr>
+										<td>example_text</td>
+										<td>A sample text using the script to showcase the appearance and characters of it. I translated several quotes from serials or public people depening on the script in order to keep the text length approximately constant. If possible, the sample text should include the characteristic features or characters of the script if those exist. For very similar scripts (or languages even), the same original text (for example quote) should be used so the user can spot the differences.</td>
+										<td>String</td>
+										<td>"ໃນທີ່ສຸດ, ການໂຕ້ຖຽງວ່າທ່ານບໍ່ສົນໃຈສິດທິໃນຄວາມເປັນສ່ວນຕົວເພາະວ່າທ່ານບໍ່ມີຫຍັງປິດບັງແມ່ນບໍ່ແຕກຕ່າງຈາກການເວົ້າວ່າທ່ານບໍ່ສົນໃຈກັບຄໍາເວົ້າທີ່ບໍ່ເສຍຄ່າເພາະວ່າທ່ານບໍ່ມີຫຍັງທີ່ຈະເວົ້າ."</td>
+									</tr>
+									<tr>
+										<td>description</td>
+										<td>A description of the script used in the Learning page. I tried to include some basic information or interesting facts about each script I learned from experience or research. However, there is no concrete template or requirements for this property.</td>
+										<td>String</td>
+										<td>"The Lao script was adapted from the Khmer script and is thus an Indic script used to write the Lao language and other languages spoken in Laos. It developed alongside the Thai script, both sharing similarities."</td>
+									</tr>
+									<tr>
+										<td>tip</td>
+										<td>One or multiple tips to recognize the script. This can be in any form deemed useful like appearance, mnemonics, specific characters or similar. The tip stems either from experience, research and comparison or sometimes the <a href="https://plonkit.net" target="_blank">PlonkIt</a> guide.</td>
+										<td>String</td>
+										<td>"Just like Thai, the Lao script is curvy with many small circles in the letters. It tends to have less straight lines and sharp edges than Thai and looks rounder and simpler in general."</td>
+									</tr>
+									<tr>
+										<td>confusables</td>
+										<td>A list of scripts the script can be confused with. It contains arrays of size 2 that have the script ID at position 0 and the <a href="#confusability-levels">Confusability Level</a> at position 1. For more information about the Confusability Levels see their <a href="#confusability-levels">Documentation</a>.</td>
+										<td>Array[Array[String, Integer], ...]</td>
+										<td>[["thai", 4], ["khmer", 3]]</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
 				<div id="confusability-levels" class="card my-2">
 					<div class="card-header text-start">
 						<p>For: <span class="documentation-users">Users</span>, <span class="documentation-modders">Modders</span></p>
