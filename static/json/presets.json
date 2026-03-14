@@ -7,9 +7,12 @@
 			"arabic",
 			"bengali",
 			"bengali_assamese",
+			"cyrillic_bulgarian",
 			"cyrillic_kyrgyz",
+			"cyrillic_macedonian",
 			"cyrillic_mongolian",
 			"cyrillic_russian",
+			"cyrillic_serbian",
 			"cyrillic_ukrainian",
 			"devanagari_hindi",
 			"devanagari_marathi",
@@ -25,6 +28,7 @@
 			"kannada",
 			"khmer",
 			"lao",
+			"latin",
 			"latin_vietnamese",
 			"malayalam",
 			"meitei_mayek",
@@ -43,9 +47,12 @@
 			"arabic",
 			"bengali",
 			"bengali_assamese",
+			"cyrillic_bulgarian",
 			"cyrillic_kyrgyz",
+			"cyrillic_macedonian",
 			"cyrillic_mongolian",
 			"cyrillic_russian",
+			"cyrillic_serbian",
 			"cyrillic_ukrainian",
 			"devanagari_hindi",
 			"devanagari_marathi",
@@ -61,6 +68,7 @@
 			"kannada",
 			"khmer",
 			"lao",
+			"latin",
 			"latin_vietnamese",
 			"malayalam",
 			"meitei_mayek",
@@ -69,6 +77,20 @@
 			"tamil",
 			"telugu",
 			"thai"
+		]
+	},
+	"cyrillic": {
+		"id": "cyrillic",
+		"label": "Cyrillic",
+		"description": "All Cyrillic scripts.",
+		"scripts": [
+			"cyrillic_bulgarian",
+			"cyrillic_kyrgyz",
+			"cyrillic_macedonian",
+			"cyrillic_mongolian",
+			"cyrillic_russian",
+			"cyrillic_serbian",
+			"cyrillic_ukrainian"
 		]
 	}
 }
