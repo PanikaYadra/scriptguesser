@@ -47,6 +47,25 @@
       ["gurmukhi_punjabi", 3]
   ]
   },
+  "cyrillic_bulgarian": {
+    "id": "cyrillic_bulgarian",
+    "code": "bg",
+    "label": "Cyrillic (Bulgarian)",
+    "keywords": ["cyrillic", "bulgarian", "bulgarian cyrillic"],
+    "countries": ["BG"],
+    "regions": [],
+    "example_text": "В крайна сметка, да твърдиш, че не те е грижа за правото на личен живот, защото нямаш какво да криеш, не е по-различно от това да кажеш, че не те е грижа за свободата на словото, защото нямаш какво да кажеш.",
+    "description": "The Bulgarian script is a Cyrillic script which was introduced to the Bulgarian language during the 9th to 10th century. Due to Bulgaria joining the EU in 2007, it made Cyrillic become the third official script in the EU after Lating and Greek. It is generally very beneficial to know the letters of other Cyrillic scripts to recognize Bulgarian since it lacks any of those additional letters.",
+    "tip": "Bulgarian Cyrillic is one of the harder Cyrillic scripts to recognize since it lacks additional characters to the Cyrillic script that make it recognizable. The best clue for Bulgarian is, that Bulgarian attaches articles to the end of nouns, so many words in Bulgarian will end in та, то, те or ът, however, this can also be seen in Macedonian. Also, Bulgarian lacks the letters Ё/ё and Ы/ы which appear in Russian.",
+    "confusables": [
+      ["cyrillic_russian", 5],
+      ["cyrillic_kyrgyz", 4],
+      ["cyrillic_macedonian", 4],
+      ["cyrillic_mongolian", 4],
+      ["cyrillic_serbian", 4],
+      ["cyrillic_ukrainian", 4]
+    ]
+  },
   "cyrillic_kyrgyz": {
     "id": "cyrillic_kyrgyz",
     "code": "ky",
@@ -59,7 +78,29 @@
     "tip": "The Kyrgyz script, being a cyrillic script, looks similar to Russian, however, the letters 'Ң', 'Ө' and 'Ү' are not found in Russian. The letter 'Ң' is good indicator for Kyrgyz since it is mostly found in several Turkic languages, most notably Kyrgyz and Kazakh.",
     "confusables": [
       ["cyrillic_mongolian", 5],
+      ["cyrillic_bulgarian", 4],
+      ["cyrillic_macedonian", 4],
       ["cyrillic_russian", 4],
+      ["cyrillic_serbian", 4],
+      ["cyrillic_ukrainian", 4]
+    ]
+  },
+  "cyrillic_macedonian": {
+    "id": "cyrillic_macedonian",
+    "code": "mk",
+    "label": "Cyrillic (Macedonian)",
+    "keywords": ["cyrillic", "macedonian", "macedonian cyrillic"],
+    "countries": ["MK"],
+    "regions": [],
+    "example_text": "На крајот на краиштата, тврдењето дека не ви е грижа за правото на приватност затоа што немате што да криете не е ништо различно од тоа да кажете дека не ви е грижа за слободата на говор затоа што немате што да кажете.",
+    "description": "The Macedonian alphabet is a Cyrillic script standardized in 1945 by a commission formed in Yugoslav Macedonia. Before, Bulgarian was written in different versions of the Cyrillic script influenced by Russian, Bulgarian and Serbian.",
+    "tip": "The Macedonian alphabet is similar to the Serbian alphabet havíng common letters like Ј, Љ, Њ and Џ, however, there are also letters unique to the Macedonian alphabet like Ѓ, Ѕ and Ќ, which are less commonly found though.",
+    "confusables": [
+      ["cyrillic_bulgarian", 4],
+      ["cyrillic_kyrgyz", 4],
+      ["cyrillic_mongolian", 4],
+      ["cyrillic_russian", 4],
+      ["cyrillic_serbian", 4],
       ["cyrillic_ukrainian", 4]
     ]
   },
@@ -75,7 +116,10 @@
     "tip": "Mongolian will look very similar to Russian and other cyrillic scripts. Unlike Russian, the letters 'Ө' and 'Ү' are present in Mongolian, however, they are also present in Turkic scripts like Kazakh and Kyrgyz. Mongolian often features double vowels like 'ээ', 'аа' or 'өө', which are rather rare in Russian, but also common in Turkic languages.",
     "confusables": [
       ["cyrillic_kyrgyz", 5],
+      ["cyrillic_bulgarian", 4],
+      ["cyrillic_macedonian", 4],
       ["cyrillic_russian", 4],
+      ["cyrillic_serbian", 4],
       ["cyrillic_ukrainian", 4]
     ]
   },
@@ -90,8 +134,30 @@
     "description": "The Russian script is a cyrillic script consisting of 33 letters. Cyrillic is a successor of the Greek script and is used to write many Slavic, Turkic, Uralic and other languges.",
     "tip": "Cyrillic looks similar to both Greek and Latin and you might recognize letters similar or identical to both scripts. Cyrillic looks kind of \"harsh\" with sharp edges and many straight lines. Keep in mind, that Russian is by far not the only cyrillic script and there exist many variations of it.",
     "confusables": [
+      ["cyrillic_bulgarian", 5],
       ["cyrillic_kyrgyz", 4],
+      ["cyrillic_macedonian", 4],
       ["cyrillic_mongolian", 4],
+      ["cyrillic_serbian", 4],
+      ["cyrillic_ukrainian", 4]
+    ]
+  },
+  "cyrillic_serbian": {
+    "id": "cyrillic_serbian",
+    "code": "sr",
+    "label": "Cyrillic (Serbian)",
+    "keywords": ["cyrillic", "serbian", "serbian cyrillic"],
+    "countries": ["BA", "HR", "RS", "XK"],
+    "regions": [],
+    "example_text": "На крају крајева, тврдити да вас није брига за право на приватност јер немате шта да кријете није ништа другачије од тога да кажете да вас није брига за слободу говора јер немате шта да кажете.",
+    "description": "The Serbian Cyrillic alphabet is a variation of the Cyrillic script used to write Serbo-Croatian and is one of the two official writing systems of Serbia, the other being Gaj's Latin alphabet. The Serbian Cyrillic alphabet or variants of it are widespread in the Balkan area.",
+    "tip": "The Serbian Cyrillic script uses many letters not found in Russian cyrillic: Ђ/ђ, Љ, Њ, Ћ/ћ and Џ. Ђ/ђ and Ћ/ћ are more or less unique to the Serbian Cyrillic alphabet, with the only other alphabet using them being the Montenegrin alphabet which is a variation of the Serbian alphabet.",
+    "confusables": [
+      ["cyrillic_bulgarian", 4],
+      ["cyrillic_kyrgyz", 4],
+      ["cyrillic_macedonian", 4],
+      ["cyrillic_mongolian", 4],
+      ["cyrillic_russian", 4],
       ["cyrillic_ukrainian", 4]
     ]
   },
@@ -106,9 +172,12 @@
     "description": "The Ukrainian script is a cyrillic script and is closely related to other cyrillic scripts like Russian, Belarusian and Bulgarian. While most letters in the Ukrainian alphabet appear in most cyrillic scripts as well, there are some exceptions as shown below.",
     "tip": "Ukrainian cyrillic looks similar to Russian cyrillic and other cyrillic scripts, however the letters 'Ґ', 'Є' and 'І' do not appear in Russian (yet there are similar looking letters in Russian like 'Г' and 'Э'), but are present in other cyrillic scripts. The letter 'Ї', on the other hand, is more or less unique to Ukrainian within the today relevant cyrillic scripts.",
     "confusables": [
+      ["cyrillic_bulgarian", 4],
       ["cyrillic_kyrgyz", 4],
+      ["cyrillic_macedonian", 4],
       ["cyrillic_mongolian", 4],
-      ["cyrillic_russian", 4]
+      ["cyrillic_russian", 4],
+      ["cyrillic_serbian", 4]
     ]
   },
   "devanagari_hindi": {
@@ -171,7 +240,8 @@
       ["cyrillic_kyrgyz", 3],
       ["cyrillic_mongolian", 3],
       ["cyrillic_russian", 3],
-      ["cyrillic_ukrainian", 3]
+      ["cyrillic_ukrainian", 3],
+      ["latin", 1]
     ]
   },
   "gujarati": {
@@ -319,6 +389,45 @@
     "confusables": [
       ["khmer", 3],
       ["thai", 4]
+    ]
+  },
+  "latin": {
+    "id": "latin",
+    "code": "la",
+    "label": "Latin (Basic)",
+    "keywords": ["latin", "roman"],
+    "countries": [
+      "AD","AG","AL","AO","AR","AT","AU",
+      "BA","BB","BE","BF","BI","BJ","BN","BO","BR","BS","BW","BZ",
+      "CA","CD","CF","CG","CH","CI","CL","CM","CO","CR","CV","CZ",
+      "DE","DK","DM","DO",
+      "EC","EE","ES",
+      "FI","FJ","FM","FR",
+      "GA","GB","GD","GH","GM","GN","GQ","GT","GW","GY",
+      "HN","HR","HT","HU",
+      "ID","IE","IN","IS","IT",
+      "JM",
+      "KE","KI","KM",
+      "KZ",
+      "LC","LI","LS","LT","LU","LV",
+      "MC","MD","ME","MG","MH","ML","MT","MU","MW","MX","MY","MZ",
+      "NA","NE","NG","NI","NL","NO","NR","NZ",
+      "PA","PE","PG","PH","PL","PT","PW","PY",
+      "RO","RS","RW",
+      "SB","SC","SE","SG","SI","SK","SL","SM","SN","SR","ST","SV","SZ",
+      "TD","TG","TL","TO","TT","TV","TZ",
+      "UG","US","UY","UZ",
+      "VA","VC","VE","VU",
+      "WS",
+      "ZA","ZM","ZW"
+    ],
+    "regions": [],
+    "example_text": "Postremo, nihil differt dicere te non curare de iure ad secretum quia nihil celandum habes a dicere te non curare de libertate dicendi quia nihil dicendum habes.",
+    "description": "The Latin, or sometimes called Roman script, is a writing system derived from the Greek alphabet and is the most widely adopted writing system in the world. The basic Latin alphabet consists of 26 letters which are the same ones used as the English alphabet and form the foundation of the International Phonetic Alphabet. There exist many variations with additional letters to the basic Latin script.",
+    "tip": "Since the Latin script is the most widespread alphabet, most will be able to recognize it from English or another language that uses it. For people unfamiliar with the Latin script (literally how are you reading this?), it may look similar to the Greek or Cyrillic script, but there are letters like Q and W which generally do not appear in non-Latin scripts.",
+    "confusables": [
+      ["cyrillic_russian", 1],
+      ["greek", 1]
     ]
   },
   "latin_vietnamese": {
