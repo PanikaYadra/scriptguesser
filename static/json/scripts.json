@@ -10,6 +10,7 @@
     "description": "The Arabic script is the writing system for the Arabic language and is the second most used writing system in the world by countries using it and the third most used by number of users. It is written from right to left and has been used to write Arabic books like the Quran.",
     "tip": "The Arabic script can be recognized by the very round letters featuring many curves and dots. You might also notice, that the script looks very \"flowing\" and connected.",
     "confusables": [
+      ["jawi", 4],
       ["hebrew", 2]
     ]
   },
@@ -344,6 +345,21 @@
     "confusables": [
       ["han_chinese", 4],
       ["hangul_korean", 3]
+    ]
+  },
+  "jawi": {
+    "id": "jawi",
+    "code": "ms-Arab",
+    "label": "Jawi",
+    "keywords": ["jawi", "jawoe"],
+    "countries": ["BN", "ID", "MY"],
+    "regions": [],
+    "example_text": "براڤ لاما اين اكن برتاهن، ڤراسان هيدوڤ يڠ لاذات اين، تله منمبوس تودوڠ يڠ مڽمبوڽيكن كچنتيكن دان كعجاءيبن ڤمندڠن لاڠيت؟ ",
+    "description": "The Jawi script is derived from the Arabic script and thus consists of all the 31 Arabic letters plus six additional letters. It is used to write multiple languages of Southeast Asia, Malay and Acehnese being two of them.",
+    "tip": "Jawi shares most letters with the Arabic script, making differentiation difficult. Jawi features six letters, that do not appear in Arabic, being 'چ', 'ڠ', 'ڤ', 'ݢ', 'ۏ' and 'ڽ'. You might notice, that Jawi features a lot more triple dots over letters than Arabic.",
+    "confusables": [
+      ["arabic", 4],
+      ["hebrew", 2]
     ]
   },
   "kannada": {
