@@ -485,6 +485,18 @@
     "tip": "The Meitei script can be recognized by the many straight vertical and horizontal lines and 90° angles. Many letters look like grids or bars, while others feature wide curves. Many letters have a long stroke above them which looks like an elongated grave accent ('`').",
     "confusables": []
   },
+  "mkhedruli": {
+    "id": "mkhedruli",
+    "code": "ka",
+    "label": "Mkhedruli (Georgian)",
+    "keywords": ["mkhedruli", "georgian"],
+    "countries": ["GE"],
+    "regions": [],
+    "example_text": "",
+    "description": "",
+    "tip": "",
+    "confusables": []
+  },
   "odia": {
     "id": "odia",
     "code": "or",
